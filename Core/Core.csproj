@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Clases\Class1.cs" />
+    <Compile Remove="Clases\Class2.cs" />
+    <Compile Remove="Clases\Class3.cs" />
+    <Compile Remove="Clases\ClaveEmpleado.cs" />
+    <Compile Remove="Clases\Platillo.cs" />
     <Compile Remove="Clases\VentaPlatillo.cs" />
   </ItemGroup>
 
