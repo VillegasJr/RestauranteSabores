@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Interfaz\" />
+    <Folder Include="Repositorio\" />
   </ItemGroup>
 
 </Project>
