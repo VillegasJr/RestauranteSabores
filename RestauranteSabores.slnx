@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/Repositorio/" />
+  <Project Path="Core/Core.csproj" Id="2f6d8949-e347-485d-8608-39e7bd2c049f" />
+  <Project Path="ScreenRestaurante/ScreenRestaurante.csproj" Id="c0644667-3a4c-4e89-8b0f-7e08ef360942" />
+</Solution>
