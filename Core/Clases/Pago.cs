@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Clases
 {
-    internal class Class1
+    internal class Pago
     {
     }
 }
