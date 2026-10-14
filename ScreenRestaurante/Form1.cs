@@ -6,5 +6,10 @@ namespace ScreenRestaurante
         {
             InitializeComponent();
         }
+
+        private void btn_iniciarsesion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

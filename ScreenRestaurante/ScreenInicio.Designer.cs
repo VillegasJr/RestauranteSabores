@@ -65,9 +65,10 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(-3, -4);
+            label1.Location = new Point(-2, -3);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(585, 191);
+            label1.Size = new Size(489, 159);
             label1.TabIndex = 0;
             label1.Text = "Sabores";
             // 
@@ -77,9 +78,10 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(530, 51);
+            label2.Location = new Point(424, 41);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(195, 70);
+            label2.Size = new Size(165, 60);
             label2.TabIndex = 1;
             label2.Text = "México";
             // 
@@ -89,9 +91,10 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Moccasin;
-            label3.Location = new Point(81, 159);
+            label3.Location = new Point(65, 127);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(374, 28);
+            label3.Size = new Size(328, 23);
             label3.TabIndex = 2;
             label3.Text = "Cocina Tradicional Mexicana · Desde 1998";
             // 
@@ -100,9 +103,10 @@
             label4.AutoSize = true;
             label4.Font = new Font("Garamond", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(331, 187);
+            label4.Location = new Point(265, 150);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(1142, 162);
+            label4.Size = new Size(950, 135);
             label4.TabIndex = 3;
             label4.Text = "El Sabor Auténtico";
             // 
@@ -111,9 +115,10 @@
             label5.AutoSize = true;
             label5.Font = new Font("Garamond", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Transparent;
-            label5.Location = new Point(596, 320);
+            label5.Location = new Point(477, 256);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(648, 162);
+            label5.Size = new Size(540, 135);
             label5.TabIndex = 4;
             label5.Text = "de México";
             // 
@@ -122,9 +127,10 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ControlDarkDark;
-            label6.Location = new Point(66, 540);
+            label6.Location = new Point(53, 432);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(240, 27);
+            label6.Size = new Size(199, 23);
             label6.TabIndex = 5;
             label6.Text = "NUESTRA HISTORIA";
             // 
@@ -133,9 +139,10 @@
             label7.AutoSize = true;
             label7.Font = new Font("Century Schoolbook", 26F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Transparent;
-            label7.Location = new Point(53, 567);
+            label7.Location = new Point(42, 454);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(430, 62);
+            label7.Size = new Size(365, 54);
             label7.TabIndex = 6;
             label7.Text = "Cocina de raíces,";
             // 
@@ -144,9 +151,10 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Schoolbook", 26F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.SaddleBrown;
-            label8.Location = new Point(463, 567);
+            label8.Location = new Point(370, 454);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(468, 62);
+            label8.Size = new Size(398, 52);
             label8.TabIndex = 7;
             label8.Text = "corazón de familia";
             // 
@@ -156,9 +164,10 @@
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             richTextBox1.ForeColor = Color.Gainsboro;
-            richTextBox1.Location = new Point(66, 646);
+            richTextBox1.Location = new Point(53, 517);
+            richTextBox1.Margin = new Padding(2, 2, 2, 2);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(1600, 420);
+            richTextBox1.Size = new Size(1280, 336);
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = resources.GetString("richTextBox1.Text");
             richTextBox1.Visible = false;
@@ -168,43 +177,48 @@
             label9.AutoSize = true;
             label9.Font = new Font("Rockwell", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.SaddleBrown;
-            label9.Location = new Point(596, 1122);
+            label9.Location = new Point(477, 898);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(568, 87);
+            label9.Size = new Size(476, 73);
             label9.TabIndex = 9;
             label9.Text = "Reservar Mesa";
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(399, 1265);
+            textBox1.Location = new Point(319, 1012);
+            textBox1.Margin = new Padding(2, 2, 2, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(960, 45);
+            textBox1.Size = new Size(769, 39);
             textBox1.TabIndex = 10;
             // 
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(399, 1361);
+            textBox2.Location = new Point(319, 1089);
+            textBox2.Margin = new Padding(2, 2, 2, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(960, 45);
+            textBox2.Size = new Size(769, 39);
             textBox2.TabIndex = 11;
             // 
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(399, 1458);
+            textBox3.Location = new Point(319, 1166);
+            textBox3.Margin = new Padding(2, 2, 2, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(343, 45);
+            textBox3.Size = new Size(275, 39);
             textBox3.TabIndex = 12;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(399, 1224);
+            label10.Location = new Point(319, 979);
+            label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(255, 38);
+            label10.Size = new Size(221, 32);
             label10.TabIndex = 13;
             label10.Text = "Nombre Completo ";
             // 
@@ -212,9 +226,10 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(399, 1320);
+            label11.Location = new Point(319, 1056);
+            label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(245, 38);
+            label11.Size = new Size(210, 32);
             label11.TabIndex = 14;
             label11.Text = "Correo Electrónico";
             // 
@@ -222,9 +237,10 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(399, 1417);
+            label12.Location = new Point(319, 1134);
+            label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(123, 38);
+            label12.Size = new Size(107, 32);
             label12.TabIndex = 15;
             label12.Text = "Teléfono";
             // 
@@ -232,9 +248,10 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(773, 1417);
+            label13.Location = new Point(618, 1134);
+            label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
-            label13.Size = new Size(89, 38);
+            label13.Size = new Size(76, 32);
             label13.TabIndex = 16;
             label13.Text = "Fecha";
             // 
@@ -242,27 +259,30 @@
             // 
             dateTimePicker1.CalendarFont = new Font("Microsoft JhengHei", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker1.Font = new Font("Arial Narrow", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(773, 1458);
+            dateTimePicker1.Location = new Point(618, 1166);
+            dateTimePicker1.Margin = new Padding(2, 2, 2, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(586, 44);
+            dateTimePicker1.Size = new Size(470, 38);
             dateTimePicker1.TabIndex = 17;
             // 
             // comboBox1
             // 
             comboBox1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(399, 1555);
+            comboBox1.Location = new Point(319, 1244);
+            comboBox1.Margin = new Padding(2, 2, 2, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(343, 46);
+            comboBox1.Size = new Size(275, 39);
             comboBox1.TabIndex = 18;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.Location = new Point(399, 1514);
+            label14.Location = new Point(319, 1211);
+            label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
-            label14.Size = new Size(217, 38);
+            label14.Size = new Size(186, 32);
             label14.TabIndex = 19;
             label14.Text = "Hora Disponible";
             // 
@@ -270,18 +290,20 @@
             // 
             comboBox2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(773, 1555);
+            comboBox2.Location = new Point(618, 1244);
+            comboBox2.Margin = new Padding(2, 2, 2, 2);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(586, 46);
+            comboBox2.Size = new Size(470, 39);
             comboBox2.TabIndex = 20;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.Location = new Point(773, 1514);
+            label15.Location = new Point(618, 1211);
+            label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(276, 38);
+            label15.Size = new Size(236, 32);
             label15.TabIndex = 21;
             label15.Text = "Número de Personas";
             // 
@@ -289,20 +311,22 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(399, 1610);
+            label16.Location = new Point(319, 1288);
+            label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
-            label16.Size = new Size(217, 38);
+            label16.Size = new Size(186, 32);
             label16.TabIndex = 22;
             label16.Text = "Hora Disponible";
             // 
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(399, 1651);
+            textBox4.Location = new Point(319, 1321);
+            textBox4.Margin = new Padding(2, 2, 2, 2);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.ScrollBars = ScrollBars.Vertical;
-            textBox4.Size = new Size(960, 177);
+            textBox4.Size = new Size(769, 142);
             textBox4.TabIndex = 23;
             // 
             // label17
@@ -310,27 +334,30 @@
             label17.AutoSize = true;
             label17.Font = new Font("Rockwell", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label17.ForeColor = Color.SaddleBrown;
-            label17.Location = new Point(455, 1966);
+            label17.Location = new Point(364, 1573);
+            label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(841, 87);
+            label17.Size = new Size(705, 73);
             label17.TabIndex = 24;
             label17.Text = "Consultar Reservación";
             // 
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(477, 2109);
+            textBox5.Location = new Point(382, 1687);
+            textBox5.Margin = new Padding(2, 2, 2, 2);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(554, 61);
+            textBox5.Size = new Size(444, 52);
             textBox5.TabIndex = 25;
             // 
             // label18
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label18.Location = new Point(477, 2068);
+            label18.Location = new Point(382, 1654);
+            label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
-            label18.Size = new Size(420, 38);
+            label18.Size = new Size(362, 32);
             label18.TabIndex = 26;
             label18.Text = "Ingresa tu código de reservación";
             // 
@@ -339,20 +366,21 @@
             button1.BackColor = Color.DarkGray;
             button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Linen;
-            button1.Location = new Point(1057, 2109);
+            button1.Location = new Point(846, 1687);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(219, 61);
+            button1.Size = new Size(175, 49);
             button1.TabIndex = 27;
             button1.Text = "Cosultar";
             button1.UseVisualStyleBackColor = false;
             // 
-            // SreenInicio
+            // ScreenInicio
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.DarkOrange;
-            ClientSize = new Size(1727, 1105);
+            ClientSize = new Size(1382, 844);
             Controls.Add(button1);
             Controls.Add(label18);
             Controls.Add(textBox5);
@@ -381,7 +409,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "SreenInicio";
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "ScreenInicio";
             Text = "SreenInicio";
             ResumeLayout(false);
             PerformLayout();

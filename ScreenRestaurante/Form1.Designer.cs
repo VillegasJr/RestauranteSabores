@@ -45,6 +45,7 @@
             btn_iniciarsesion.TabIndex = 0;
             btn_iniciarsesion.Text = "Iniciar Sesion";
             btn_iniciarsesion.UseVisualStyleBackColor = true;
+            btn_iniciarsesion.Click += btn_iniciarsesion_Click;
             // 
             // lb_usuario
             // 
