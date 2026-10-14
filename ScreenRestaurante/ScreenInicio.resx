@@ -117,11 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Sabores es un restaurante especializado en comida tradicional mexicana, comprometido con ofrecer platillos preparados con ingredientes frescos y recetas que conservan el auténtico sabor de nuestra gastronomía.
-
-Fundado en 1998 en el corazón de San José del Cabo, nuestro restaurante nació del amor por las tradiciones culinarias mexicanas transmitidas de generación en generación. A lo largo de más de dos décadas, hemos servido a miles de comensales locales y visitantes que buscan una experiencia gastronómica auténtica.
-
-Buscamos preservar la tradición culinaria mexicana incorporando procesos modernos que nos permitan brindar una atención rápida, eficiente y memorable.</value>
-  </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

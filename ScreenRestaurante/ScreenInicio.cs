@@ -19,5 +19,6 @@ namespace ScreenRestaurante
             // Habilitar el scroll automático
             this.AutoScroll = true;
         }
+
     }
 }
