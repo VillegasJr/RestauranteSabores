@@ -15,11 +15,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaz\" />
     <Folder Include="Data\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Interfaz\" />
     <Folder Include="Repositorio\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="26.7.0" />
   </ItemGroup>
 
 </Project>
