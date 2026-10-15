@@ -40,6 +40,7 @@
             bt_enviarcocina = new Button();
             cb_mesas = new ComboBox();
             label1 = new Label();
+            label17 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgv_platillos).BeginInit();
             SuspendLayout();
             // 
@@ -49,13 +50,14 @@
             dgv_platillos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_platillos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_platillos.Columns.AddRange(new DataGridViewColumn[] { Col_Platillo, colCantidad, colPrecio, colComentario });
-            dgv_platillos.Location = new Point(76, 106);
+            dgv_platillos.GridColor = Color.FromArgb(255, 249, 244);
+            dgv_platillos.Location = new Point(18, 129);
             dgv_platillos.MultiSelect = false;
             dgv_platillos.Name = "dgv_platillos";
             dgv_platillos.ReadOnly = true;
             dgv_platillos.RowHeadersWidth = 51;
             dgv_platillos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_platillos.Size = new Size(437, 388);
+            dgv_platillos.Size = new Size(520, 500);
             dgv_platillos.TabIndex = 0;
             // 
             // Col_Platillo
@@ -88,68 +90,87 @@
             // 
             // pnl_platillos
             // 
-            pnl_platillos.Location = new Point(641, 106);
+            pnl_platillos.Location = new Point(645, 129);
             pnl_platillos.Name = "pnl_platillos";
-            pnl_platillos.Size = new Size(337, 388);
+            pnl_platillos.Size = new Size(525, 500);
             pnl_platillos.TabIndex = 1;
             // 
             // lb_pedidomesa
             // 
             lb_pedidomesa.AutoSize = true;
-            lb_pedidomesa.Location = new Point(641, 68);
+            lb_pedidomesa.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_pedidomesa.Location = new Point(645, 88);
             lb_pedidomesa.Name = "lb_pedidomesa";
-            lb_pedidomesa.Size = new Size(94, 20);
+            lb_pedidomesa.Size = new Size(184, 38);
             lb_pedidomesa.TabIndex = 2;
             lb_pedidomesa.Text = "Pedido Mesa";
             // 
             // lb_comentarios
             // 
             lb_comentarios.AutoSize = true;
-            lb_comentarios.Location = new Point(113, 534);
+            lb_comentarios.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_comentarios.Location = new Point(33, 642);
             lb_comentarios.Name = "lb_comentarios";
-            lb_comentarios.Size = new Size(93, 20);
+            lb_comentarios.Size = new Size(183, 38);
             lb_comentarios.TabIndex = 3;
             lb_comentarios.Text = "Comentarios";
             // 
             // tb_comentarios
             // 
-            tb_comentarios.Location = new Point(113, 566);
+            tb_comentarios.Location = new Point(33, 683);
             tb_comentarios.Name = "tb_comentarios";
-            tb_comentarios.Size = new Size(275, 27);
+            tb_comentarios.Size = new Size(309, 30);
             tb_comentarios.TabIndex = 4;
             // 
             // bt_enviarcocina
             // 
-            bt_enviarcocina.Location = new Point(845, 566);
+            bt_enviarcocina.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bt_enviarcocina.Location = new Point(952, 661);
             bt_enviarcocina.Name = "bt_enviarcocina";
-            bt_enviarcocina.Size = new Size(133, 29);
+            bt_enviarcocina.Size = new Size(204, 52);
             bt_enviarcocina.TabIndex = 5;
             bt_enviarcocina.Text = "Enviar Cocina";
             bt_enviarcocina.UseVisualStyleBackColor = true;
+            bt_enviarcocina.Click += bt_enviarcocina_Click;
             // 
             // cb_mesas
             // 
             cb_mesas.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_mesas.FormattingEnabled = true;
-            cb_mesas.Location = new Point(127, 68);
+            cb_mesas.Location = new Point(143, 82);
             cb_mesas.Name = "cb_mesas";
-            cb_mesas.Size = new Size(151, 28);
+            cb_mesas.Size = new Size(169, 31);
             cb_mesas.TabIndex = 6;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(77, 71);
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(51, 82);
             label1.Name = "label1";
-            label1.Size = new Size(44, 20);
+            label1.Size = new Size(86, 38);
             label1.TabIndex = 7;
             label1.Text = "Mesa";
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Rockwell", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.SaddleBrown;
+            label17.Location = new Point(18, 9);
+            label17.Margin = new Padding(2, 0, 2, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(375, 54);
+            label17.TabIndex = 29;
+            label17.Text = "Modulo Pedidos";
+            // 
             // Pedidos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1045, 652);
+            BackColor = Color.FromArgb(198, 107, 53);
+            ClientSize = new Size(1218, 743);
+            Controls.Add(label17);
             Controls.Add(label1);
             Controls.Add(cb_mesas);
             Controls.Add(bt_enviarcocina);
@@ -158,7 +179,10 @@
             Controls.Add(lb_pedidomesa);
             Controls.Add(pnl_platillos);
             Controls.Add(dgv_platillos);
+            Font = new Font("Segoe UI", 10F);
+            MinimumSize = new Size(1000, 650);
             Name = "Pedidos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pedidos";
             ((System.ComponentModel.ISupportInitialize)dgv_platillos).EndInit();
             ResumeLayout(false);
@@ -179,5 +203,6 @@
         private DataGridViewTextBoxColumn colPrecio;
         private DataGridViewTextBoxColumn colComentario;
         private ComboBox cb_mesas;
+        private Label label17;
     }
 }

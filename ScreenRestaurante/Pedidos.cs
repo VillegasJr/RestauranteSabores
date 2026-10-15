@@ -16,5 +16,10 @@ namespace ScreenRestaurante
         {
             InitializeComponent();
         }
+
+        private void bt_enviarcocina_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
