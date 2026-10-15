@@ -28,41 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox4 = new TextBox();
+            txtNota = new TextBox();
             label16 = new Label();
             label15 = new Label();
-            comboBox2 = new ComboBox();
+            cmdNumeroPersonas = new ComboBox();
             label14 = new Label();
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            cmdHoraDisponible = new ComboBox();
+            dtpFechareserva = new DateTimePicker();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtTelefono = new TextBox();
+            txtCorreo = new TextBox();
+            txtNombreCompleto = new TextBox();
             label9 = new Label();
-            button1 = new Button();
+            btnConfirmarreserva = new Button();
             label1 = new Label();
             SuspendLayout();
             // 
-            // textBox4
+            // txtNota
             // 
-            textBox4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(46, 538);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.ScrollBars = ScrollBars.Vertical;
-            textBox4.Size = new Size(960, 177);
-            textBox4.TabIndex = 38;
+            txtNota.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNota.Location = new Point(32, 323);
+            txtNota.Margin = new Padding(2, 2, 2, 2);
+            txtNota.Multiline = true;
+            txtNota.Name = "txtNota";
+            txtNota.ScrollBars = ScrollBars.Vertical;
+            txtNota.Size = new Size(673, 108);
+            txtNota.TabIndex = 38;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(46, 497);
+            label16.Location = new Point(32, 298);
+            label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
-            label16.Size = new Size(82, 38);
+            label16.Size = new Size(56, 25);
             label16.TabIndex = 37;
             label16.Text = "Nota";
             // 
@@ -70,56 +72,62 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(420, 401);
+            label15.Location = new Point(294, 241);
+            label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(288, 38);
+            label15.Size = new Size(197, 25);
             label15.TabIndex = 36;
             label15.Text = "Número de Personas";
             // 
-            // comboBox2
+            // cmdNumeroPersonas
             // 
-            comboBox2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(420, 442);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(586, 46);
-            comboBox2.TabIndex = 35;
+            cmdNumeroPersonas.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmdNumeroPersonas.FormattingEnabled = true;
+            cmdNumeroPersonas.Location = new Point(294, 265);
+            cmdNumeroPersonas.Margin = new Padding(2, 2, 2, 2);
+            cmdNumeroPersonas.Name = "cmdNumeroPersonas";
+            cmdNumeroPersonas.Size = new Size(411, 33);
+            cmdNumeroPersonas.TabIndex = 35;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(46, 401);
+            label14.Location = new Point(32, 241);
+            label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
-            label14.Size = new Size(229, 38);
+            label14.Size = new Size(157, 25);
             label14.TabIndex = 34;
             label14.Text = "Hora Disponible";
             // 
-            // comboBox1
+            // cmdHoraDisponible
             // 
-            comboBox1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(46, 442);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(343, 46);
-            comboBox1.TabIndex = 33;
+            cmdHoraDisponible.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmdHoraDisponible.FormattingEnabled = true;
+            cmdHoraDisponible.Location = new Point(32, 265);
+            cmdHoraDisponible.Margin = new Padding(2, 2, 2, 2);
+            cmdHoraDisponible.Name = "cmdHoraDisponible";
+            cmdHoraDisponible.Size = new Size(241, 33);
+            cmdHoraDisponible.TabIndex = 33;
             // 
-            // dateTimePicker1
+            // dtpFechareserva
             // 
-            dateTimePicker1.CalendarFont = new Font("Microsoft JhengHei", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateTimePicker1.Font = new Font("Arial Narrow", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(420, 345);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(586, 44);
-            dateTimePicker1.TabIndex = 32;
+            dtpFechareserva.CalendarFont = new Font("Microsoft JhengHei", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dtpFechareserva.Font = new Font("Arial Narrow", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpFechareserva.Location = new Point(294, 207);
+            dtpFechareserva.Margin = new Padding(2, 2, 2, 2);
+            dtpFechareserva.Name = "dtpFechareserva";
+            dtpFechareserva.Size = new Size(411, 32);
+            dtpFechareserva.TabIndex = 32;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(46, 304);
+            label12.Location = new Point(32, 182);
+            label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(130, 38);
+            label12.Size = new Size(89, 25);
             label12.TabIndex = 30;
             label12.Text = "Teléfono";
             // 
@@ -127,9 +135,10 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(46, 207);
+            label11.Location = new Point(32, 124);
+            label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(258, 38);
+            label11.Size = new Size(178, 25);
             label11.TabIndex = 29;
             label11.Text = "Correo Electrónico";
             // 
@@ -137,114 +146,124 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(46, 111);
+            label10.Location = new Point(32, 67);
+            label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(269, 38);
+            label10.Size = new Size(183, 25);
             label10.TabIndex = 28;
             label10.Text = "Nombre Completo ";
             // 
-            // textBox3
+            // txtTelefono
             // 
-            textBox3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(46, 345);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(343, 45);
-            textBox3.TabIndex = 27;
+            txtTelefono.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTelefono.Location = new Point(32, 207);
+            txtTelefono.Margin = new Padding(2, 2, 2, 2);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(241, 32);
+            txtTelefono.TabIndex = 27;
             // 
-            // textBox2
+            // txtCorreo
             // 
-            textBox2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(46, 248);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(960, 45);
-            textBox2.TabIndex = 26;
+            txtCorreo.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCorreo.Location = new Point(32, 149);
+            txtCorreo.Margin = new Padding(2, 2, 2, 2);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(673, 32);
+            txtCorreo.TabIndex = 26;
             // 
-            // textBox1
+            // txtNombreCompleto
             // 
-            textBox1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(46, 152);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(960, 45);
-            textBox1.TabIndex = 25;
+            txtNombreCompleto.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNombreCompleto.Location = new Point(32, 91);
+            txtNombreCompleto.Margin = new Padding(2, 2, 2, 2);
+            txtNombreCompleto.Name = "txtNombreCompleto";
+            txtNombreCompleto.Size = new Size(673, 32);
+            txtNombreCompleto.TabIndex = 25;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Rockwell", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.SaddleBrown;
-            label9.Location = new Point(255, 9);
+            label9.Location = new Point(178, 5);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(568, 87);
+            label9.Size = new Size(382, 59);
             label9.TabIndex = 24;
             label9.Text = "Reservar Mesa";
             // 
-            // button1
+            // btnConfirmarreserva
             // 
-            button1.BackColor = Color.LightGray;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(327, 740);
-            button1.Name = "button1";
-            button1.Size = new Size(327, 65);
-            button1.TabIndex = 39;
-            button1.Text = "Confirmar Reserva";
-            button1.UseVisualStyleBackColor = false;
+            btnConfirmarreserva.BackColor = Color.LightGray;
+            btnConfirmarreserva.FlatStyle = FlatStyle.Flat;
+            btnConfirmarreserva.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirmarreserva.Location = new Point(229, 444);
+            btnConfirmarreserva.Margin = new Padding(2, 2, 2, 2);
+            btnConfirmarreserva.Name = "btnConfirmarreserva";
+            btnConfirmarreserva.Size = new Size(229, 39);
+            btnConfirmarreserva.TabIndex = 39;
+            btnConfirmarreserva.Text = "Confirmar Reserva";
+            btnConfirmarreserva.UseVisualStyleBackColor = false;
+            btnConfirmarreserva.Click += btnConfirmarreserva_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(420, 304);
+            label1.Location = new Point(294, 182);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(296, 38);
+            label1.Size = new Size(201, 25);
             label1.TabIndex = 40;
             label1.Text = "Fecha de Reservación";
             // 
             // Reservaciones
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkOrange;
-            ClientSize = new Size(1068, 846);
+            ClientSize = new Size(748, 508);
             Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(textBox4);
+            Controls.Add(btnConfirmarreserva);
+            Controls.Add(txtNota);
             Controls.Add(label16);
             Controls.Add(label15);
-            Controls.Add(comboBox2);
+            Controls.Add(cmdNumeroPersonas);
             Controls.Add(label14);
-            Controls.Add(comboBox1);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(cmdHoraDisponible);
+            Controls.Add(dtpFechareserva);
             Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtTelefono);
+            Controls.Add(txtCorreo);
+            Controls.Add(txtNombreCompleto);
             Controls.Add(label9);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Reservaciones";
             Text = "Reservaciones";
+            Load += Reservaciones_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox4;
+        private TextBox txtNota;
         private Label label16;
         private Label label15;
-        private ComboBox comboBox2;
+        private ComboBox cmdNumeroPersonas;
         private Label label14;
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
+        private ComboBox cmdHoraDisponible;
+        private DateTimePicker dtpFechareserva;
         private Label label12;
         private Label label11;
         private Label label10;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtTelefono;
+        private TextBox txtCorreo;
+        private TextBox txtNombreCompleto;
         private Label label9;
-        private Button button1;
+        private Button btnConfirmarreserva;
         private Label label1;
     }
 }
