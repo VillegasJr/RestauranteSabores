@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             dgv_platillos = new DataGridView();
+            Col_Platillo = new DataGridViewTextBoxColumn();
+            colCantidad = new DataGridViewTextBoxColumn();
+            colPrecio = new DataGridViewTextBoxColumn();
+            colComentario = new DataGridViewTextBoxColumn();
             pnl_platillos = new Panel();
             lb_pedidomesa = new Label();
             lb_comentarios = new Label();
             tb_comentarios = new TextBox();
             bt_enviarcocina = new Button();
-            Col_Platillo = new DataGridViewTextBoxColumn();
-            colCantidad = new DataGridViewTextBoxColumn();
-            colPrecio = new DataGridViewTextBoxColumn();
-            colComentario = new DataGridViewTextBoxColumn();
             cb_mesas = new ComboBox();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgv_platillos).BeginInit();
@@ -55,8 +55,36 @@
             dgv_platillos.ReadOnly = true;
             dgv_platillos.RowHeadersWidth = 51;
             dgv_platillos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_platillos.Size = new Size(427, 388);
+            dgv_platillos.Size = new Size(437, 388);
             dgv_platillos.TabIndex = 0;
+            // 
+            // Col_Platillo
+            // 
+            Col_Platillo.HeaderText = "Platillo";
+            Col_Platillo.MinimumWidth = 6;
+            Col_Platillo.Name = "Col_Platillo";
+            Col_Platillo.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            colCantidad.HeaderText = "Cantidad";
+            colCantidad.MinimumWidth = 6;
+            colCantidad.Name = "colCantidad";
+            colCantidad.ReadOnly = true;
+            // 
+            // colPrecio
+            // 
+            colPrecio.HeaderText = "Precio";
+            colPrecio.MinimumWidth = 6;
+            colPrecio.Name = "colPrecio";
+            colPrecio.ReadOnly = true;
+            // 
+            // colComentario
+            // 
+            colComentario.HeaderText = "Comentario";
+            colComentario.MinimumWidth = 6;
+            colComentario.Name = "colComentario";
+            colComentario.ReadOnly = true;
             // 
             // pnl_platillos
             // 
@@ -98,34 +126,6 @@
             bt_enviarcocina.TabIndex = 5;
             bt_enviarcocina.Text = "Enviar Cocina";
             bt_enviarcocina.UseVisualStyleBackColor = true;
-            // 
-            // Col_Platillo
-            // 
-            Col_Platillo.HeaderText = "Platillo";
-            Col_Platillo.MinimumWidth = 6;
-            Col_Platillo.Name = "Col_Platillo";
-            Col_Platillo.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            colCantidad.HeaderText = "Cantidad";
-            colCantidad.MinimumWidth = 6;
-            colCantidad.Name = "colCantidad";
-            colCantidad.ReadOnly = true;
-            // 
-            // colPrecio
-            // 
-            colPrecio.HeaderText = "Precio";
-            colPrecio.MinimumWidth = 6;
-            colPrecio.Name = "colPrecio";
-            colPrecio.ReadOnly = true;
-            // 
-            // colComentario
-            // 
-            colComentario.HeaderText = "Comentario";
-            colComentario.MinimumWidth = 6;
-            colComentario.Name = "colComentario";
-            colComentario.ReadOnly = true;
             // 
             // cb_mesas
             // 
