@@ -28,132 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnConsultarReserva = new Button();
             label18 = new Label();
-            textBox5 = new TextBox();
+            txtCodigoReserva = new TextBox();
             label17 = new Label();
-            dataGridView1 = new DataGridView();
+            txtInformacionReserva = new DataGridView();
             label1 = new Label();
-            button2 = new Button();
-            button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnEditarReserva = new Button();
+            btnCancelarReserva = new Button();
+            ((System.ComponentModel.ISupportInitialize)txtInformacionReserva).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // btnConsultarReserva
             // 
-            button1.BackColor = Color.DarkGray;
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Linen;
-            button1.Location = new Point(684, 139);
-            button1.Name = "button1";
-            button1.Size = new Size(219, 61);
-            button1.TabIndex = 31;
-            button1.Text = "Cosultar";
-            button1.UseVisualStyleBackColor = false;
+            btnConsultarReserva.BackColor = Color.DarkGray;
+            btnConsultarReserva.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnConsultarReserva.ForeColor = Color.Linen;
+            btnConsultarReserva.Location = new Point(479, 83);
+            btnConsultarReserva.Margin = new Padding(2);
+            btnConsultarReserva.Name = "btnConsultarReserva";
+            btnConsultarReserva.Size = new Size(153, 37);
+            btnConsultarReserva.TabIndex = 31;
+            btnConsultarReserva.Text = "Cosultar";
+            btnConsultarReserva.UseVisualStyleBackColor = false;
+            btnConsultarReserva.Click += btnConsultarReserva_Click;
             // 
             // label18
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(104, 98);
+            label18.Location = new Point(73, 59);
+            label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
-            label18.Size = new Size(444, 38);
+            label18.Size = new Size(304, 25);
             label18.TabIndex = 30;
             label18.Text = "Ingresa tu código de reservación";
             // 
-            // textBox5
+            // txtCodigoReserva
             // 
-            textBox5.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(104, 139);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(554, 61);
-            textBox5.TabIndex = 29;
+            txtCodigoReserva.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCodigoReserva.Location = new Point(73, 86);
+            txtCodigoReserva.Margin = new Padding(2);
+            txtCodigoReserva.Name = "txtCodigoReserva";
+            txtCodigoReserva.Size = new Size(389, 43);
+            txtCodigoReserva.TabIndex = 29;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Rockwell", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label17.ForeColor = Color.SaddleBrown;
-            label17.Location = new Point(214, 11);
+            label17.Location = new Point(150, 7);
+            label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(841, 87);
+            label17.Size = new Size(565, 59);
             label17.TabIndex = 28;
             label17.Text = "Consultar Reservación";
             // 
-            // dataGridView1
+            // txtInformacionReserva
             // 
-            dataGridView1.BackgroundColor = Color.Gainsboro;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(27, 248);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1159, 211);
-            dataGridView1.TabIndex = 32;
+            txtInformacionReserva.BackgroundColor = Color.Gainsboro;
+            txtInformacionReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            txtInformacionReserva.Location = new Point(20, 149);
+            txtInformacionReserva.Margin = new Padding(2);
+            txtInformacionReserva.Name = "txtInformacionReserva";
+            txtInformacionReserva.RowHeadersWidth = 62;
+            txtInformacionReserva.Size = new Size(811, 127);
+            txtInformacionReserva.TabIndex = 32;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(27, 204);
+            label1.Location = new Point(19, 122);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(210, 38);
+            label1.Size = new Size(143, 25);
             label1.TabIndex = 33;
             label1.Text = "Inf. Reservación";
             // 
-            // button2
+            // btnEditarReserva
             // 
-            button2.BackColor = Color.DarkGray;
-            button2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Linen;
-            button2.Location = new Point(909, 139);
-            button2.Name = "button2";
-            button2.Size = new Size(219, 61);
-            button2.TabIndex = 34;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = false;
+            btnEditarReserva.BackColor = Color.DarkGray;
+            btnEditarReserva.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditarReserva.ForeColor = Color.Linen;
+            btnEditarReserva.Location = new Point(636, 83);
+            btnEditarReserva.Margin = new Padding(2);
+            btnEditarReserva.Name = "btnEditarReserva";
+            btnEditarReserva.Size = new Size(153, 37);
+            btnEditarReserva.TabIndex = 34;
+            btnEditarReserva.Text = "Editar";
+            btnEditarReserva.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCancelarReserva
             // 
-            button3.BackColor = Color.DarkGray;
-            button3.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.Linen;
-            button3.Location = new Point(967, 465);
-            button3.Name = "button3";
-            button3.Size = new Size(219, 61);
-            button3.TabIndex = 35;
-            button3.Text = "Cancelar";
-            button3.UseVisualStyleBackColor = false;
+            btnCancelarReserva.BackColor = Color.DarkGray;
+            btnCancelarReserva.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancelarReserva.ForeColor = Color.Linen;
+            btnCancelarReserva.Location = new Point(677, 279);
+            btnCancelarReserva.Margin = new Padding(2);
+            btnCancelarReserva.Name = "btnCancelarReserva";
+            btnCancelarReserva.Size = new Size(153, 37);
+            btnCancelarReserva.TabIndex = 35;
+            btnCancelarReserva.Text = "Cancelar";
+            btnCancelarReserva.UseVisualStyleBackColor = false;
             // 
             // Consultar_Reservaciónes
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkOrange;
-            ClientSize = new Size(1212, 548);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            ClientSize = new Size(848, 329);
+            Controls.Add(btnCancelarReserva);
+            Controls.Add(btnEditarReserva);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
+            Controls.Add(txtInformacionReserva);
+            Controls.Add(btnConsultarReserva);
             Controls.Add(label18);
-            Controls.Add(textBox5);
+            Controls.Add(txtCodigoReserva);
             Controls.Add(label17);
+            Margin = new Padding(2);
             Name = "Consultar_Reservaciónes";
             Text = "Consultar_Reservaciónes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtInformacionReserva).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button btnConsultarReserva;
         private Label label18;
-        private TextBox textBox5;
+        private TextBox txtCodigoReserva;
         private Label label17;
-        private DataGridView dataGridView1;
+        private DataGridView txtInformacionReserva;
         private Label label1;
-        private Button button2;
-        private Button button3;
+        private Button btnEditarReserva;
+        private Button btnCancelarReserva;
     }
 }

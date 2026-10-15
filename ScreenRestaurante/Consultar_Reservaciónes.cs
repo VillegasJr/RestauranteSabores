@@ -16,5 +16,23 @@ namespace ScreenRestaurante
         {
             InitializeComponent();
         }
+
+        private void btnConsultarReserva_Click(object sender, EventArgs e)
+        {
+           string codigo = txtCodigoReserva.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(codigo))
+            {
+                MessageBox.Show("Por favor, ingresa el codigo de reservacion.", "campo vacio",MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtCodigoReserva.Focus();
+                return;
+            }
+            
+        
+        }
+
+
     }
 }
+
