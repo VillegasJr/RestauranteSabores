@@ -15,9 +15,9 @@ namespace ScreenRestaurante
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text;
-            string contraseña = txtContraseña.Text;
+            string contrasena = txtContraseña.Text;
 
-            if (usuario == "Gerente" && contraseña == "2026Gerente")
+            if (usuario == "Gerente" && contrasena == "2026Gerente")
             {
                 MessageBox.Show(
                     "¡Bienvenido, Gerente!",
