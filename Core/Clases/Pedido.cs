@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Core.Clases
 {
-
+    /// <summary>
     /// Define los estados posibles de un pedido.
-    
+    /// </summary>
     public enum EstadoPedido
     {
         Pendiente,
@@ -16,20 +16,21 @@ namespace Core.Clases
         Cancelado
     }
 
-   
+    /// <summary>
     /// Representa un pedido realizado en el restaurante.
-   
+    /// </summary>
     public class Pedido
     {
-     
-        public int IdPedido { get; private set; }        
-        public DateTime FechaHora { get; private set; }       
-        public Mesa Mesa { get; private set; }      
+        public int IdPedido { get; private set; }
+        public DateTime FechaHora { get; private set; }
+        public Mesa Mesa { get; private set; }
         public Empleado Empleado { get; private set; }
         public EstadoPedido Estado { get; private set; }
 
+        /// <summary>
         /// Crea un pedido y valida los datos principales.
-        public Pedido(int idPedido,Mesa mesa,Empleado empleado)
+        /// </summary>
+        public Pedido(int idPedido, Mesa mesa, Empleado empleado)
         {
             // Validamos que el identificador sea positivo.
             if (idPedido <= 0)
@@ -60,7 +61,9 @@ namespace Core.Clases
             Mesa.CambiarEstado(EstadoMesa.Ocupada);
         }
 
+        /// <summary>
         /// Cambia el estado actual del pedido.
+        /// </summary>
         public void CambiarEstado(EstadoPedido nuevoEstado)
         {
             // Comprobamos que el estado exista.
@@ -82,7 +85,9 @@ namespace Core.Clases
                 Mesa.CambiarEstado(EstadoMesa.Disponible);
         }
 
+        /// <summary>
         /// Devuelve la información principal del pedido.
+        /// </summary>
         public string ObtenerInformacion()
         {
             return $"Pedido: {IdPedido} | " +
@@ -93,4 +98,3 @@ namespace Core.Clases
         }
     }
 }
-

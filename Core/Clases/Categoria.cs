@@ -1,11 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace Core.Clases
 {
+    /// <summary>
     /// Representa una categoría del menú del restaurante.
+    /// </summary>
     public class Categoria
     {
         public int IdCategoria { get; private set; }
@@ -13,8 +14,10 @@ namespace Core.Clases
         public string Descripcion { get; private set; }
         public bool Activo { get; private set; }
 
+        /// <summary>
         /// Crea una categoría con su nombre y descripción.
-        public Categoria(int idCategoria,string nombre,string descripcion)
+        /// </summary>
+        public Categoria(int idCategoria, string nombre, string descripcion)
         {
             // Validamos el identificador.
             if (idCategoria <= 0)
@@ -33,9 +36,9 @@ namespace Core.Clases
             Activo = true;
         }
 
-       
+        /// <summary>
         /// Permite actualizar el nombre y la descripción.
-        
+        /// </summary>
         public void ActualizarInformacion(
             string nombre,
             string descripcion)
@@ -47,13 +50,17 @@ namespace Core.Clases
             Descripcion = descripcion ?? string.Empty;
         }
 
+        /// <summary>
         /// Activa la categoría.
+        /// </summary>
         public void Activar()
         {
             Activo = true;
         }
 
+        /// <summary>
         /// Desactiva la categoría sin eliminarla.
+        /// </summary>
         public void Desactivar()
         {
             Activo = false;

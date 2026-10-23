@@ -1,10 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Core.Clases
 {
+    /// <summary>
     /// Define los estados posibles de una mesa.
+    /// </summary>
     public enum EstadoMesa
     {
         Disponible,
@@ -13,7 +15,9 @@ namespace Core.Clases
         FueraDeServicio
     }
 
+    /// <summary>
     /// Representa una mesa física del restaurante.
+    /// </summary>
     public class Mesa
     {
         public int IdMesa { get; private set; }
@@ -21,8 +25,10 @@ namespace Core.Clases
         public int Capacidad { get; private set; }
         public EstadoMesa Estado { get; private set; }
 
+        /// <summary>
         /// Crea una mesa con su número y capacidad.
-        public Mesa(int idMesa,int numeroMesa,int capacidad)
+        /// </summary>
+        public Mesa(int idMesa, int numeroMesa, int capacidad)
         {
             // El ID debe ser positivo.
             if (idMesa <= 0)
@@ -45,7 +51,9 @@ namespace Core.Clases
             Estado = EstadoMesa.Disponible;
         }
 
+        /// <summary>
         /// Cambia el estado actual de la mesa.
+        /// </summary>
         public void CambiarEstado(EstadoMesa nuevoEstado)
         {
             // Evitamos aceptar valores de estado no definidos.
@@ -55,13 +63,17 @@ namespace Core.Clases
             Estado = nuevoEstado;
         }
 
+        /// <summary>
         /// Indica si la mesa puede recibir clientes.
+        /// </summary>
         public bool EstaDisponible()
         {
             return Estado == EstadoMesa.Disponible;
         }
 
+        /// <summary>
         /// Modifica la capacidad de la mesa.
+        /// </summary>
         public void CambiarCapacidad(int nuevaCapacidad)
         {
             if (nuevaCapacidad <= 0)
@@ -70,7 +82,9 @@ namespace Core.Clases
             Capacidad = nuevaCapacidad;
         }
 
+        /// <summary>
         /// Devuelve los datos principales de la mesa.
+        /// </summary>
         public string ObtenerInformacion()
         {
             return $"Mesa: {NumeroMesa} | " +
