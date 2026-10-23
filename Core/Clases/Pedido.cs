@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Clases
 {
-    internal class Platillo
+    internal class Pedido
     {
     }
 }
