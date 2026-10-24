@@ -1,13 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Core.Clases
 {
+    /// <summary>
     /// Representa una línea o detalle de un pedido.
     /// Cada detalle relaciona un pedido con un producto,
     /// su cantidad y el precio aplicado.
-    public class Detallepedido
+    /// </summary>
+    public class DetallePedido
     {
         public int IdDetalle { get; private set; }
         public Pedido Pedido { get; private set; }
@@ -21,8 +23,10 @@ namespace Core.Clases
             get { return Cantidad * PrecioUnitario; }
         }
 
+        /// <summary>
         /// Crea un detalle y valida sus datos.
-        public Detallepedido(int idDetalle,Pedido pedido,Producto producto,int cantidad)
+        /// </summary>
+        public DetallePedido(int idDetalle, Pedido pedido, Producto producto, int cantidad)
         {
             // Validamos que el identificador sea positivo.
             if (idDetalle <= 0)
@@ -56,7 +60,9 @@ namespace Core.Clases
             PrecioUnitario = producto.Precio;
         }
 
+        /// <summary>
         /// Modifica la cantidad solicitada.
+        /// </summary>
         public void CambiarCantidad(int nuevaCantidad)
         {
             // La cantidad debe ser positiva.
@@ -66,13 +72,17 @@ namespace Core.Clases
             Cantidad = nuevaCantidad;
         }
 
+        /// <summary>
         /// Calcula el subtotal de este detalle.
+        /// </summary>
         public decimal CalcularSubtotal()
         {
             return Subtotal;
         }
 
+        /// <summary>
         /// Devuelve la información del detalle.
+        /// </summary>
         public string ObtenerInformacion()
         {
             return $"Producto: {Producto.Nombre} | " +
