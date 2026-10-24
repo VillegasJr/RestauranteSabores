@@ -32,9 +32,9 @@
             label2 = new Label();
             label3 = new Label();
             menuStrip1 = new MenuStrip();
-            iniciarSesiónToolStripMenuItem = new ToolStripMenuItem();
-            realizarReservaciónToolStripMenuItem = new ToolStripMenuItem();
-            cToolStripMenuItem = new ToolStripMenuItem();
+            ventasToolStripMenuItem = new ToolStripMenuItem();
+            inventarioToolStripMenuItem = new ToolStripMenuItem();
+            consultarReservacionesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,10 +44,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(0, 36);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(0, 60);
             label1.Name = "label1";
-            label1.Size = new Size(390, 128);
+            label1.Size = new Size(585, 191);
             label1.TabIndex = 0;
             label1.Text = "Sabores";
             // 
@@ -57,10 +56,9 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(384, 66);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(549, 110);
             label2.Name = "label2";
-            label2.Size = new Size(130, 47);
+            label2.Size = new Size(195, 70);
             label2.TabIndex = 1;
             label2.Text = "México";
             // 
@@ -70,56 +68,52 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Moccasin;
-            label3.Location = new Point(56, 145);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(80, 242);
             label3.Name = "label3";
-            label3.Size = new Size(264, 19);
+            label3.Size = new Size(374, 28);
             label3.TabIndex = 2;
             label3.Text = "Cocina Tradicional Mexicana · Desde 1998";
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { iniciarSesiónToolStripMenuItem, realizarReservaciónToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ventasToolStripMenuItem, inventarioToolStripMenuItem, consultarReservacionesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(4, 1, 0, 1);
-            menuStrip1.Size = new Size(540, 24);
+            menuStrip1.Size = new Size(771, 33);
             menuStrip1.TabIndex = 28;
             menuStrip1.Text = "menuStrip1";
             // 
-            // iniciarSesiónToolStripMenuItem
+            // ventasToolStripMenuItem
             // 
-            iniciarSesiónToolStripMenuItem.Name = "iniciarSesiónToolStripMenuItem";
-            iniciarSesiónToolStripMenuItem.Size = new Size(88, 22);
-            iniciarSesiónToolStripMenuItem.Text = "Iniciar Sesión";
+            ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            ventasToolStripMenuItem.Size = new Size(80, 29);
+            ventasToolStripMenuItem.Text = "Ventas";
             // 
-            // realizarReservaciónToolStripMenuItem
+            // inventarioToolStripMenuItem
             // 
-            realizarReservaciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cToolStripMenuItem });
-            realizarReservaciónToolStripMenuItem.Name = "realizarReservaciónToolStripMenuItem";
-            realizarReservaciónToolStripMenuItem.Size = new Size(125, 22);
-            realizarReservaciónToolStripMenuItem.Text = "Realizar Reservación";
+            inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+            inventarioToolStripMenuItem.Size = new Size(107, 29);
+            inventarioToolStripMenuItem.Text = "Inventario";
             // 
-            // cToolStripMenuItem
+            // consultarReservacionesToolStripMenuItem
             // 
-            cToolStripMenuItem.Name = "cToolStripMenuItem";
-            cToolStripMenuItem.Size = new Size(191, 22);
-            cToolStripMenuItem.Text = "Consultar Reservación";
+            consultarReservacionesToolStripMenuItem.Name = "consultarReservacionesToolStripMenuItem";
+            consultarReservacionesToolStripMenuItem.Size = new Size(218, 29);
+            consultarReservacionesToolStripMenuItem.Text = "Consultar Reservaciones";
             // 
             // ScreenInicio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = Color.DarkOrange;
-            ClientSize = new Size(540, 199);
+            BackColor = Color.FromArgb(198, 107, 53);
+            ClientSize = new Size(771, 332);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(2);
             Name = "ScreenInicio";
             Text = "SreenInicio";
             menuStrip1.ResumeLayout(false);
@@ -134,8 +128,8 @@
         private Label label2;
         private Label label3;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem iniciarSesiónToolStripMenuItem;
-        private ToolStripMenuItem realizarReservaciónToolStripMenuItem;
-        private ToolStripMenuItem cToolStripMenuItem;
+        private ToolStripMenuItem ventasToolStripMenuItem;
+        private ToolStripMenuItem inventarioToolStripMenuItem;
+        private ToolStripMenuItem consultarReservacionesToolStripMenuItem;
     }
 }
