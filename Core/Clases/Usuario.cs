@@ -9,7 +9,9 @@ namespace Core.Clases
         public int IdUsuario { get; protected set; }
         public string Nombre { get; protected set; }
         public string UsuarioAcceso { get; protected set; }
-        public bool Activo { get; protected set; }
+        public string PasswordHash { get; set; } = string.Empty;                   
+        public string Rol { get; set; } = string.Empty;
+        public bool Activo { get; protected set; } = true;
 
         protected Usuario(int idUsuario, string nombre, string usuarioAcceso)
         {
