@@ -15,12 +15,12 @@ namespace ScreenRestaurante
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text;
-            string contraseï¿½a = txtContraseï¿½a.Text;
+            string contraseña = txtContraseña.Text;
 
-            if (usuario == "Gerente" && contraseï¿½a == "2026Gerente")
+            if (usuario == "Gerente" && contraseña == "2026Gerente")
             {
                 MessageBox.Show(
-                    "ï¿½Bienvenido, Gerente!",
+                    "¡Bienvenido, Gerente!",
                     "Acceso autorizado",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
@@ -38,14 +38,14 @@ namespace ScreenRestaurante
             else
             {
                 MessageBox.Show(
-                    "Usuario o contraseï¿½a incorrectos.",
+                    "Usuario o contraseña incorrectos.",
                     "Error de acceso",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
 
-                txtContraseï¿½a.Clear();
-                txtContraseï¿½a.Focus();
+                txtContraseña.Clear();
+                txtContraseña.Focus();
             }
         }
     }
