@@ -77,6 +77,39 @@ namespace Core.Repositorios
                 return tabla;
             }
         }
+
+        // Obtiene los platillos de un pedido para calcular su cobro.
+        public DataTable ObtenerDetalleParaCobro(int pedidoId)
+        {
+            using (MySqlConnection conexion = Conexion.CrearConexion())
+            {
+                conexion.Open();
+
+                string sql = @"
+            SELECT
+                m.nombre AS Platillo,
+                dp.cantidad AS Cantidad,
+                m.precio AS Precio,
+                (dp.cantidad * m.precio) AS Subtotal
+            FROM detalle_pedido dp
+            INNER JOIN menu m ON dp.menu_id = m.id
+            WHERE dp.pedido_id = @pedidoId";
+
+                using (MySqlCommand comando = new MySqlCommand(sql, conexion))
+                {
+                    comando.Parameters.AddWithValue("@pedidoId", pedidoId);
+
+                    using (MySqlDataAdapter adaptador =
+                           new MySqlDataAdapter(comando))
+                    {
+                        DataTable tabla = new DataTable();
+                        adaptador.Fill(tabla);
+                        return tabla;
+                    }
+                }
+            }
+        }
+
     }
 }
 

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Core.Repositorio
 {
+    
     public class RepositorioUsuarios
     {
         public bool ValidarUsuario(

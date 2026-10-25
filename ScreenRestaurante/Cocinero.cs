@@ -38,6 +38,32 @@ namespace ScreenRestaurante
             tarjeta.BorderStyle = BorderStyle.FixedSingle;
             tarjeta.BackColor = Color.White;
             tarjeta.Margin = new Padding(5);
+
+            Label lblPedido = new Label();
+            lblPedido.Text = $"Pedido #{idPedido} - Mesa {numeroMesa}";
+            lblPedido.Location = new Point(10, 10);
+            lblPedido.AutoSize = true;
+            lblPedido.Font = new Font("Arial", 10, FontStyle.Bold);
+
+            Label lblProducto = new Label();
+            lblProducto.Text = producto;
+            lblProducto.Location = new Point(10, 35);
+            lblProducto.AutoSize = true;
+
+            Label lblEstado = new Label();
+            lblEstado.Text = estado;
+            lblEstado.Location = new Point(10, 60);
+            lblEstado.AutoSize = true;
+
+            tarjeta.Controls.Add(lblPedido);
+            tarjeta.Controls.Add(lblProducto);
+            tarjeta.Controls.Add(lblEstado);
+
+            tarjeta.Margin = new Padding(5);
+            tarjeta.Dock = DockStyle.Top;
+
+            panel.Controls.Add(tarjeta);
+            tarjeta.BringToFront();
         }
     }
 
