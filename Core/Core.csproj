@@ -20,7 +20,6 @@
     <Folder Include="Excepcion\" />
     <Folder Include="Interfaz\" />
     <Folder Include="Services\" />
-    <Folder Include="repositorio\" />
   </ItemGroup>
 
   <ItemGroup>
