@@ -45,30 +45,55 @@ namespace ScreenRestaurante
                 if (repositorio.ValidarUsuario(
                     usuario, contrasena, out string rol))
                 {
-                    MessageBox.Show(
-                        "¡Bienvenido!",
-                        "Acceso autorizado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    Form ventana = null;
 
-                    if (rol == "GERENTE")
+                    switch (rol.Trim().ToUpper())
                     {
-                        this.Hide();
+                        case "GERENTE":
+                            ventana = new Reservaciones();
+                            break;
 
-                        using (Reservaciones ventana = new Reservaciones())
-                        {
-                            ventana.ShowDialog();
-                        }
+                        case "COCINERO":
+                            ventana = new Cocinero();
+                            break;
 
-                        this.Show();
+                        case "CAJERO":
+                            ventana = new Cajero();
+                            break;
+
+                        case "MESERO":
+                            ventana = new Pedidos();
+                            break;
+
+                        default:
+                            MessageBox.Show(
+                                "No hay una pantalla configurada para este puesto.");
+                            break;
                     }
-                    else
+
+                    if (ventana != null)
                     {
                         MessageBox.Show(
-                            "Tu usuario es válido, pero todavía falta configurar la pantalla de tu puesto.");
+                            "¡Bienvenido!",
+                            "Acceso autorizado",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
 
-                        txtContraseña.Clear();
-                        txtContraseña.Focus();
+                        this.Hide();
+
+                        try
+                        {
+                            using (ventana)
+                            {
+                                ventana.ShowDialog();
+                            }
+                        }
+                        finally
+                        {
+                            this.Show();
+                            txtContraseña.Clear();
+                            txtContraseña.Focus();
+                        }
                     }
                 }
                 else
@@ -93,4 +118,5 @@ namespace ScreenRestaurante
             }
         }
     }
+    
 }
