@@ -44,10 +44,10 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(0, 36);
+            label1.Location = new Point(0, 48);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(390, 128);
+            label1.Size = new Size(489, 159);
             label1.TabIndex = 0;
             label1.Text = "Sabores";
             // 
@@ -57,10 +57,10 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(384, 66);
+            label2.Location = new Point(439, 88);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(130, 47);
+            label2.Size = new Size(165, 60);
             label2.TabIndex = 1;
             label2.Text = "México";
             // 
@@ -70,10 +70,10 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Moccasin;
-            label3.Location = new Point(56, 145);
+            label3.Location = new Point(64, 193);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(264, 19);
+            label3.Size = new Size(328, 23);
             label3.TabIndex = 2;
             label3.Text = "Cocina Tradicional Mexicana · Desde 1998";
             // 
@@ -83,43 +83,43 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { iniciarSesiónToolStripMenuItem, realizarReservaciónToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(4, 1, 0, 1);
-            menuStrip1.Size = new Size(540, 24);
+            menuStrip1.Padding = new Padding(5, 1, 0, 1);
+            menuStrip1.Size = new Size(677, 26);
             menuStrip1.TabIndex = 28;
             menuStrip1.Text = "menuStrip1";
             // 
             // iniciarSesiónToolStripMenuItem
             // 
             iniciarSesiónToolStripMenuItem.Name = "iniciarSesiónToolStripMenuItem";
-            iniciarSesiónToolStripMenuItem.Size = new Size(88, 22);
+            iniciarSesiónToolStripMenuItem.Size = new Size(110, 24);
             iniciarSesiónToolStripMenuItem.Text = "Iniciar Sesión";
             // 
             // realizarReservaciónToolStripMenuItem
             // 
             realizarReservaciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cToolStripMenuItem });
             realizarReservaciónToolStripMenuItem.Name = "realizarReservaciónToolStripMenuItem";
-            realizarReservaciónToolStripMenuItem.Size = new Size(125, 22);
+            realizarReservaciónToolStripMenuItem.Size = new Size(159, 24);
             realizarReservaciónToolStripMenuItem.Text = "Realizar Reservación";
             // 
             // cToolStripMenuItem
             // 
             cToolStripMenuItem.Name = "cToolStripMenuItem";
-            cToolStripMenuItem.Size = new Size(191, 22);
+            cToolStripMenuItem.Size = new Size(237, 26);
             cToolStripMenuItem.Text = "Consultar Reservación";
             // 
             // ScreenInicio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.DarkOrange;
-            ClientSize = new Size(540, 199);
+            ClientSize = new Size(677, 377);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "ScreenInicio";
             Text = "SreenInicio";
             menuStrip1.ResumeLayout(false);

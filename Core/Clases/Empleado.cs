@@ -1,52 +1,48 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Core.Clases
 {
-    /// Representa a un empleado del restaurante.
-    /// El puesto permite identificar si trabaja como mesero,
-    /// cocinero, administrador u otro tipo de empleado.
-    public class Empleado
+    /// <summary>
+    /// Representa a un empleado del restaurante que también es un usuario del sistema.
+    /// </summary>
+    public class Empleado : Usuario
     {
-       public int IdEmpleado { get; private set; }
-        public string Nombre { get; private set; }
         public string Puesto { get; private set; }
         public string Telefono { get; private set; }
         public bool Activo { get; private set; }
 
+        /// <summary>
         /// Crea un empleado y valida sus datos obligatorios.
-        public Empleado(int idEmpleado,string nombre,string puesto,string telefono)
+        /// </summary>
+        public Empleado(
+            int idUsuario,
+            string nombre,
+            string usuarioAcceso,
+            string puesto,
+            string telefono)
+            : base(idUsuario, nombre, usuarioAcceso)
         {
-            // El identificador debe ser positivo.
-            if (idEmpleado <= 0)
-                throw new ArgumentException("El ID del empleado debe ser mayor que cero.");
-
-            // El nombre no puede estar vacío.
-            if (string.IsNullOrWhiteSpace(nombre))
-                throw new ArgumentException("El nombre del empleado es obligatorio.");
-
-            // El puesto es necesario para identificar su función.
             if (string.IsNullOrWhiteSpace(puesto))
                 throw new ArgumentException("El puesto del empleado es obligatorio.");
 
-            // Guardamos los datos recibidos.
-            IdEmpleado = idEmpleado;
-            Nombre = nombre;
             Puesto = puesto;
             Telefono = telefono ?? string.Empty;
-
-            // Todo empleado nuevo comienza activo.
             Activo = true;
         }
 
+        /// <summary>
         /// Permite actualizar el teléfono del empleado.
+        /// </summary>
         public void ActualizarTelefono(string telefono)
         {
             Telefono = telefono ?? string.Empty;
         }
 
+        /// <summary>
         /// Permite cambiar el puesto del empleado.
+        /// </summary>
         public void CambiarPuesto(string nuevoPuesto)
         {
             if (string.IsNullOrWhiteSpace(nuevoPuesto))
@@ -55,22 +51,33 @@ namespace Core.Clases
             Puesto = nuevoPuesto;
         }
 
+        /// <summary>
         /// Activa nuevamente al empleado.
+        /// </summary>
         public void Activar()
         {
             Activo = true;
         }
 
+        /// <summary>
         /// Desactiva al empleado sin eliminar su registro.
+        /// </summary>
         public void Desactivar()
         {
             Activo = false;
         }
 
-        /// Devuelve los datos principales del empleado.
-        public string ObtenerInformacion()
+        public override string ObtenerTipoUsuario()
         {
-            return $"ID: {IdEmpleado} | " +
+            return "Empleado";
+        }
+
+        /// <summary>
+        /// Devuelve los datos principales del empleado.
+        /// </summary>
+        public virtual string ObtenerInformacion()
+        {
+            return $"ID: {IdUsuario} | " +
                    $"Nombre: {Nombre} | " +
                    $"Puesto: {Puesto} | " +
                    $"Teléfono: {Telefono} | " +
