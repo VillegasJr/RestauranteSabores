@@ -41,7 +41,15 @@
             cb_mesas = new ComboBox();
             label1 = new Label();
             label17 = new Label();
+            flp_productos = new FlowLayoutPanel();
+            flp_categorias = new FlowLayoutPanel();
+            bt_platillos = new Button();
+            bt_entradas = new Button();
+            bt_bebidas = new Button();
+            bt_postres = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_platillos).BeginInit();
+            pnl_platillos.SuspendLayout();
+            flp_categorias.SuspendLayout();
             SuspendLayout();
             // 
             // dgv_platillos
@@ -90,9 +98,11 @@
             // 
             // pnl_platillos
             // 
+            pnl_platillos.Controls.Add(flp_categorias);
+            pnl_platillos.Controls.Add(flp_productos);
             pnl_platillos.Location = new Point(645, 129);
             pnl_platillos.Name = "pnl_platillos";
-            pnl_platillos.Size = new Size(525, 500);
+            pnl_platillos.Size = new Size(536, 500);
             pnl_platillos.TabIndex = 1;
             // 
             // lb_pedidomesa
@@ -101,7 +111,7 @@
             lb_pedidomesa.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_pedidomesa.Location = new Point(645, 88);
             lb_pedidomesa.Name = "lb_pedidomesa";
-            lb_pedidomesa.Size = new Size(184, 38);
+            lb_pedidomesa.Size = new Size(146, 30);
             lb_pedidomesa.TabIndex = 2;
             lb_pedidomesa.Text = "Pedido Mesa";
             // 
@@ -111,7 +121,7 @@
             lb_comentarios.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_comentarios.Location = new Point(33, 642);
             lb_comentarios.Name = "lb_comentarios";
-            lb_comentarios.Size = new Size(183, 38);
+            lb_comentarios.Size = new Size(144, 30);
             lb_comentarios.TabIndex = 3;
             lb_comentarios.Text = "Comentarios";
             // 
@@ -119,7 +129,7 @@
             // 
             tb_comentarios.Location = new Point(33, 683);
             tb_comentarios.Name = "tb_comentarios";
-            tb_comentarios.Size = new Size(309, 30);
+            tb_comentarios.Size = new Size(309, 25);
             tb_comentarios.TabIndex = 4;
             // 
             // bt_enviarcocina
@@ -139,7 +149,7 @@
             cb_mesas.FormattingEnabled = true;
             cb_mesas.Location = new Point(143, 82);
             cb_mesas.Name = "cb_mesas";
-            cb_mesas.Size = new Size(169, 31);
+            cb_mesas.Size = new Size(169, 25);
             cb_mesas.TabIndex = 6;
             // 
             // label1
@@ -148,7 +158,7 @@
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(51, 82);
             label1.Name = "label1";
-            label1.Size = new Size(86, 38);
+            label1.Size = new Size(68, 30);
             label1.TabIndex = 7;
             label1.Text = "Mesa";
             // 
@@ -160,13 +170,70 @@
             label17.Location = new Point(18, 9);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(375, 54);
+            label17.Size = new Size(295, 43);
             label17.TabIndex = 29;
             label17.Text = "Modulo Pedidos";
             // 
+            // flp_productos
+            // 
+            flp_productos.AutoScroll = true;
+            flp_productos.Dock = DockStyle.Fill;
+            flp_productos.Location = new Point(0, 0);
+            flp_productos.Name = "flp_productos";
+            flp_productos.Size = new Size(536, 500);
+            flp_productos.TabIndex = 5;
+            // 
+            // flp_categorias
+            // 
+            flp_categorias.Controls.Add(bt_platillos);
+            flp_categorias.Controls.Add(bt_entradas);
+            flp_categorias.Controls.Add(bt_bebidas);
+            flp_categorias.Controls.Add(bt_postres);
+            flp_categorias.Dock = DockStyle.Top;
+            flp_categorias.Location = new Point(0, 0);
+            flp_categorias.Name = "flp_categorias";
+            flp_categorias.Size = new Size(536, 45);
+            flp_categorias.TabIndex = 6;
+            // 
+            // bt_platillos
+            // 
+            bt_platillos.Location = new Point(3, 3);
+            bt_platillos.Name = "bt_platillos";
+            bt_platillos.Size = new Size(126, 33);
+            bt_platillos.TabIndex = 1;
+            bt_platillos.Text = "Platillos";
+            bt_platillos.UseVisualStyleBackColor = true;
+            // 
+            // bt_entradas
+            // 
+            bt_entradas.Location = new Point(135, 3);
+            bt_entradas.Name = "bt_entradas";
+            bt_entradas.Size = new Size(126, 33);
+            bt_entradas.TabIndex = 2;
+            bt_entradas.Text = "Entradas";
+            bt_entradas.UseVisualStyleBackColor = true;
+            // 
+            // bt_bebidas
+            // 
+            bt_bebidas.Location = new Point(267, 3);
+            bt_bebidas.Name = "bt_bebidas";
+            bt_bebidas.Size = new Size(126, 33);
+            bt_bebidas.TabIndex = 3;
+            bt_bebidas.Text = "Bebidas";
+            bt_bebidas.UseVisualStyleBackColor = true;
+            // 
+            // bt_postres
+            // 
+            bt_postres.Location = new Point(399, 3);
+            bt_postres.Name = "bt_postres";
+            bt_postres.Size = new Size(126, 33);
+            bt_postres.TabIndex = 4;
+            bt_postres.Text = "Postres";
+            bt_postres.UseVisualStyleBackColor = true;
+            // 
             // Pedidos
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(198, 107, 53);
             ClientSize = new Size(1218, 743);
@@ -185,6 +252,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pedidos";
             ((System.ComponentModel.ISupportInitialize)dgv_platillos).EndInit();
+            pnl_platillos.ResumeLayout(false);
+            flp_categorias.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -204,5 +273,11 @@
         private DataGridViewTextBoxColumn colComentario;
         private ComboBox cb_mesas;
         private Label label17;
+        private FlowLayoutPanel flp_categorias;
+        private Button bt_platillos;
+        private Button bt_entradas;
+        private Button bt_bebidas;
+        private Button bt_postres;
+        private FlowLayoutPanel flp_productos;
     }
 }

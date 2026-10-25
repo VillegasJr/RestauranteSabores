@@ -9,8 +9,8 @@ using MySql.Data;
 
 namespace Core
 {
-    internal static class Until
+    public static class Utils
     {
-        public static string ConexionSQL = "server=localhost;user id=root;password=;database=;";
+        public static string ConexionSQL = "server=localhost;user id=root;password=1102;database=;";
     }
 }
