@@ -61,7 +61,7 @@ namespace ScreenRestaurante
             cmdNumeroPersonas.SelectedIndex = -1;
         }
 
-       
+
 
         private void btnConfirmarreserva_Click(object sender, EventArgs e)
         {
@@ -134,8 +134,5 @@ namespace ScreenRestaurante
 
             }
         }
-
-
-
     }
 }

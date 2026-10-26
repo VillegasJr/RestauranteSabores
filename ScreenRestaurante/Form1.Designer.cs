@@ -11,14 +11,6 @@
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Windows Form Designer generated code
 
@@ -28,103 +20,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnIniciarSesion = new Button();
-            lb_usuario = new Label();
-            lb_contra = new Label();
             txtUsuario = new TextBox();
             txtContraseña = new TextBox();
             label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            btnIniciarSesion = new Button();
             SuspendLayout();
-            // 
-            // btnIniciarSesion
-            // 
-            btnIniciarSesion.FlatStyle = FlatStyle.Flat;
-            btnIniciarSesion.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnIniciarSesion.Location = new Point(98, 172);
-            btnIniciarSesion.Margin = new Padding(3, 2, 3, 2);
-            btnIniciarSesion.Name = "btnIniciarSesion";
-            btnIniciarSesion.Size = new Size(139, 43);
-            btnIniciarSesion.TabIndex = 0;
-            btnIniciarSesion.Text = "Iniciar Sesion";
-            btnIniciarSesion.UseVisualStyleBackColor = true;
-            btnIniciarSesion.Click += btnIniciarSesion_Click;
-            // 
-            // lb_usuario
-            // 
-            lb_usuario.AutoSize = true;
-            lb_usuario.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_usuario.Location = new Point(57, 79);
-            lb_usuario.Name = "lb_usuario";
-            lb_usuario.Size = new Size(77, 25);
-            lb_usuario.TabIndex = 1;
-            lb_usuario.Text = "Usuario";
-            // 
-            // lb_contra
-            // 
-            lb_contra.AutoSize = true;
-            lb_contra.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_contra.Location = new Point(57, 136);
-            lb_contra.Name = "lb_contra";
-            lb_contra.Size = new Size(108, 25);
-            lb_contra.TabIndex = 2;
-            lb_contra.Text = "Contraseña";
             // 
             // txtUsuario
             // 
-            txtUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsuario.Location = new Point(57, 53);
-            txtUsuario.Margin = new Padding(3, 2, 3, 2);
+            txtUsuario.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsuario.Location = new Point(159, 172);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(231, 29);
-            txtUsuario.TabIndex = 3;
+            txtUsuario.Size = new Size(286, 45);
+            txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
-            txtContraseña.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtContraseña.Location = new Point(57, 110);
-            txtContraseña.Margin = new Padding(3, 2, 3, 2);
+            txtContraseña.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtContraseña.Location = new Point(159, 265);
             txtContraseña.Name = "txtContraseña";
-            txtContraseña.Size = new Size(231, 29);
-            txtContraseña.TabIndex = 4;
+            txtContraseña.Size = new Size(286, 45);
+            txtContraseña.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.SaddleBrown;
-            label1.Location = new Point(9, 16);
+            label1.Font = new Font("Book Antiqua", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(37, 24);
             label1.Name = "label1";
-            label1.Size = new Size(338, 33);
-            label1.TabIndex = 5;
-            label1.Text = "Acceso Para Empleados";
-            label1.Click += label1_Click;
+            label1.Size = new Size(580, 68);
+            label1.TabIndex = 2;
+            label1.Text = "Acceso de Empleados";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(159, 131);
+            label2.Name = "label2";
+            label2.Size = new Size(114, 38);
+            label2.TabIndex = 3;
+            label2.Text = "Usuario";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(159, 224);
+            label3.Name = "label3";
+            label3.Size = new Size(160, 38);
+            label3.TabIndex = 4;
+            label3.Text = "Contraseña";
+            // 
+            // btnIniciarSesion
+            // 
+            btnIniciarSesion.FlatStyle = FlatStyle.Popup;
+            btnIniciarSesion.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnIniciarSesion.Location = new Point(192, 351);
+            btnIniciarSesion.Name = "btnIniciarSesion";
+            btnIniciarSesion.Size = new Size(204, 69);
+            btnIniciarSesion.TabIndex = 5;
+            btnIniciarSesion.Text = "Iniciar sesión";
+            btnIniciarSesion.UseVisualStyleBackColor = true;
+            btnIniciarSesion.Click += btnIniciarSesion_Click_1;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkOrange;
-            ClientSize = new Size(357, 239);
+            BackColor = Color.FromArgb(198, 107, 53);
+            ClientSize = new Size(649, 584);
+            Controls.Add(btnIniciarSesion);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
-            Controls.Add(lb_contra);
-            Controls.Add(lb_usuario);
-            Controls.Add(btnIniciarSesion);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
-            Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnIniciarSesion;
-        private Label lb_usuario;
-        private Label lb_contra;
         private TextBox txtUsuario;
         private TextBox txtContraseña;
         private Label label1;
+        private Label label2;
+        private Label label3;
+        private Button btnIniciarSesion;
     }
 }
