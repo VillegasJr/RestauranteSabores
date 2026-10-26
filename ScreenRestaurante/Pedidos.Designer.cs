@@ -34,6 +34,12 @@
             colPrecio = new DataGridViewTextBoxColumn();
             colComentario = new DataGridViewTextBoxColumn();
             pnl_platillos = new Panel();
+            flp_categorias = new FlowLayoutPanel();
+            bt_platillos = new Button();
+            bt_entradas = new Button();
+            bt_bebidas = new Button();
+            bt_postres = new Button();
+            flp_productos = new FlowLayoutPanel();
             lb_pedidomesa = new Label();
             lb_comentarios = new Label();
             tb_comentarios = new TextBox();
@@ -41,12 +47,6 @@
             cb_mesas = new ComboBox();
             label1 = new Label();
             label17 = new Label();
-            flp_productos = new FlowLayoutPanel();
-            flp_categorias = new FlowLayoutPanel();
-            bt_platillos = new Button();
-            bt_entradas = new Button();
-            bt_bebidas = new Button();
-            bt_postres = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_platillos).BeginInit();
             pnl_platillos.SuspendLayout();
             flp_categorias.SuspendLayout();
@@ -104,6 +104,62 @@
             pnl_platillos.Name = "pnl_platillos";
             pnl_platillos.Size = new Size(536, 500);
             pnl_platillos.TabIndex = 1;
+            // 
+            // flp_categorias
+            // 
+            flp_categorias.Controls.Add(bt_platillos);
+            flp_categorias.Controls.Add(bt_entradas);
+            flp_categorias.Controls.Add(bt_bebidas);
+            flp_categorias.Controls.Add(bt_postres);
+            flp_categorias.Dock = DockStyle.Top;
+            flp_categorias.Location = new Point(0, 0);
+            flp_categorias.Name = "flp_categorias";
+            flp_categorias.Size = new Size(536, 45);
+            flp_categorias.TabIndex = 6;
+            // 
+            // bt_platillos
+            // 
+            bt_platillos.Location = new Point(3, 3);
+            bt_platillos.Name = "bt_platillos";
+            bt_platillos.Size = new Size(126, 33);
+            bt_platillos.TabIndex = 1;
+            bt_platillos.Text = "Platillos";
+            bt_platillos.UseVisualStyleBackColor = true;
+            // 
+            // bt_entradas
+            // 
+            bt_entradas.Location = new Point(135, 3);
+            bt_entradas.Name = "bt_entradas";
+            bt_entradas.Size = new Size(126, 33);
+            bt_entradas.TabIndex = 2;
+            bt_entradas.Text = "Entradas";
+            bt_entradas.UseVisualStyleBackColor = true;
+            // 
+            // bt_bebidas
+            // 
+            bt_bebidas.Location = new Point(267, 3);
+            bt_bebidas.Name = "bt_bebidas";
+            bt_bebidas.Size = new Size(126, 33);
+            bt_bebidas.TabIndex = 3;
+            bt_bebidas.Text = "Bebidas";
+            bt_bebidas.UseVisualStyleBackColor = true;
+            // 
+            // bt_postres
+            // 
+            bt_postres.Location = new Point(399, 3);
+            bt_postres.Name = "bt_postres";
+            bt_postres.Size = new Size(126, 33);
+            bt_postres.TabIndex = 4;
+            bt_postres.Text = "Postres";
+            bt_postres.UseVisualStyleBackColor = true;
+            // 
+            // flp_productos
+            // 
+            flp_productos.AutoScroll = true;
+            flp_productos.Location = new Point(0, 51);
+            flp_productos.Name = "flp_productos";
+            flp_productos.Size = new Size(536, 449);
+            flp_productos.TabIndex = 5;
             // 
             // lb_pedidomesa
             // 
@@ -173,63 +229,6 @@
             label17.Size = new Size(295, 43);
             label17.TabIndex = 29;
             label17.Text = "Modulo Pedidos";
-            // 
-            // flp_productos
-            // 
-            flp_productos.AutoScroll = true;
-            flp_productos.Dock = DockStyle.Fill;
-            flp_productos.Location = new Point(0, 0);
-            flp_productos.Name = "flp_productos";
-            flp_productos.Size = new Size(536, 500);
-            flp_productos.TabIndex = 5;
-            // 
-            // flp_categorias
-            // 
-            flp_categorias.Controls.Add(bt_platillos);
-            flp_categorias.Controls.Add(bt_entradas);
-            flp_categorias.Controls.Add(bt_bebidas);
-            flp_categorias.Controls.Add(bt_postres);
-            flp_categorias.Dock = DockStyle.Top;
-            flp_categorias.Location = new Point(0, 0);
-            flp_categorias.Name = "flp_categorias";
-            flp_categorias.Size = new Size(536, 45);
-            flp_categorias.TabIndex = 6;
-            // 
-            // bt_platillos
-            // 
-            bt_platillos.Location = new Point(3, 3);
-            bt_platillos.Name = "bt_platillos";
-            bt_platillos.Size = new Size(126, 33);
-            bt_platillos.TabIndex = 1;
-            bt_platillos.Text = "Platillos";
-            bt_platillos.UseVisualStyleBackColor = true;
-            // 
-            // bt_entradas
-            // 
-            bt_entradas.Location = new Point(135, 3);
-            bt_entradas.Name = "bt_entradas";
-            bt_entradas.Size = new Size(126, 33);
-            bt_entradas.TabIndex = 2;
-            bt_entradas.Text = "Entradas";
-            bt_entradas.UseVisualStyleBackColor = true;
-            // 
-            // bt_bebidas
-            // 
-            bt_bebidas.Location = new Point(267, 3);
-            bt_bebidas.Name = "bt_bebidas";
-            bt_bebidas.Size = new Size(126, 33);
-            bt_bebidas.TabIndex = 3;
-            bt_bebidas.Text = "Bebidas";
-            bt_bebidas.UseVisualStyleBackColor = true;
-            // 
-            // bt_postres
-            // 
-            bt_postres.Location = new Point(399, 3);
-            bt_postres.Name = "bt_postres";
-            bt_postres.Size = new Size(126, 33);
-            bt_postres.TabIndex = 4;
-            bt_postres.Text = "Postres";
-            bt_postres.UseVisualStyleBackColor = true;
             // 
             // Pedidos
             // 
