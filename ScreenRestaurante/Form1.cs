@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace ScreenRestaurante
 {
@@ -17,15 +18,22 @@ namespace ScreenRestaurante
             InitializeComponent();
         }
 
-        private void btnIniciarSesion_Click_1(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            
+
             string usuario = txtUsuario.Text.Trim();
-            string contrasena = txtContraseña.Text;
+            string contrasena = txtContrase�a.Text;
 
             if (string.IsNullOrWhiteSpace(usuario) ||
                 string.IsNullOrWhiteSpace(contrasena))
             {
-                MessageBox.Show("Ingresa tu usuario y contraseña.");
+                MessageBox.Show("Ingresa tu usuario y contrase�a.");
                 return;
             }
 
@@ -37,78 +45,52 @@ namespace ScreenRestaurante
                 if (repositorio.ValidarUsuario(
                     usuario, contrasena, out string rol))
                 {
-                    Form ventana = null;
+                    MessageBox.Show(
+                        "�Bienvenido!",
+                        "Acceso autorizado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
-                    switch (rol.Trim().ToUpper())
+                    if (rol == "GERENTE")
                     {
-                        case "GERENTE":
-                            ventana = new GerenteSesion();
-                            break;
-
-                        case "COCINERO":
-                            ventana = new Cocinero();
-                            break;
-
-                        case "CAJERO":
-                            ventana = new Cajero();
-                            break;
-
-                        case "MESERO":
-                            ventana = new Pedidos();
-                            break;
-
-                        default:
-                            MessageBox.Show(
-                                "No hay una pantalla asignada para este puesto.");
-                            break;
-                    }
-
-                    if (ventana != null)
-                    {
-                        MessageBox.Show(
-                            "¡Bienvenido!",
-                            "Acceso autorizado",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-
                         this.Hide();
 
-                        try
+                        using (Reservaciones ventana = new Reservaciones())
                         {
-                            using (ventana)
-                            {
-                                ventana.ShowDialog();
-                            }
+                            ventana.ShowDialog();
                         }
-                        finally
-                        {
-                            this.Show();
-                            txtContraseña.Clear();
-                            txtContraseña.Focus();
-                        }
+
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Tu usuario es v�lido, pero todav�a falta configurar la pantalla de tu puesto.");
+
+                        txtContrase�a.Clear();
+                        txtContrase�a.Focus();
                     }
                 }
                 else
                 {
                     MessageBox.Show(
-                        "Usuario o contraseña incorrectos.",
+                        "Usuario o contrase�a incorrectos.",
                         "Error de acceso",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
 
-                    txtContraseña.Clear();
-                    txtContraseña.Focus();
+                    txtContrase�a.Clear();
+                    txtContrase�a.Focus();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
                     "No se pudo validar el usuario: " + ex.Message,
-                    "Error de conexión",
+                    "Error de conexi�n",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
     }
-
 }

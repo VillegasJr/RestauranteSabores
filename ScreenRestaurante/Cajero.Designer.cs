@@ -30,16 +30,17 @@
         {
             label17 = new Label();
             label1 = new Label();
-            this.dgvDetallePedido = new DataGridView();
-            txtPedido = new TextBox();
+            dgvDetallePedido = new DataGridView();
             btnBuscarPedido = new Button();
             label2 = new Label();
-            label3 = new Label();
+            lblTotal = new Label();
             label4 = new Label();
             btnActualizat = new Button();
             btnCobrar = new Button();
             cmbMetodoPago = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)this.dgvDetallePedido).BeginInit();
+            cmbMesa = new ComboBox();
+            txtPedido = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvDetallePedido).BeginInit();
             SuspendLayout();
             // 
             // label17
@@ -47,10 +48,10 @@
             label17.AutoSize = true;
             label17.Font = new Font("Rockwell", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label17.ForeColor = Color.SaddleBrown;
-            label17.Location = new Point(11, 26);
+            label17.Location = new Point(13, 35);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(398, 43);
+            label17.Size = new Size(498, 54);
             label17.TabIndex = 30;
             label17.Text = "CAJERO DE SABORES";
             // 
@@ -58,128 +59,147 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(23, 91);
+            label1.Location = new Point(26, 121);
             label1.Name = "label1";
-            label1.Size = new Size(214, 30);
+            label1.Size = new Size(272, 38);
             label1.TabIndex = 31;
             label1.Text = "Numero de pedido:";
             // 
             // dgvDetallePedido
             // 
-            this.dgvDetallePedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetallePedido.Location = new Point(23, 152);
-            this.dgvDetallePedido.Name = "dgvDetallePedido";
-            this.dgvDetallePedido.Size = new Size(502, 274);
-            this.dgvDetallePedido.TabIndex = 32;
-            // 
-            // txtPedido
-            // 
-            txtPedido.Location = new Point(243, 98);
-            txtPedido.Name = "txtPedido";
-            txtPedido.Size = new Size(144, 23);
-            txtPedido.TabIndex = 33;
+            dgvDetallePedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDetallePedido.Location = new Point(26, 203);
+            dgvDetallePedido.Margin = new Padding(3, 4, 3, 4);
+            dgvDetallePedido.Name = "dgvDetallePedido";
+            dgvDetallePedido.RowHeadersWidth = 51;
+            dgvDetallePedido.Size = new Size(574, 365);
+            dgvDetallePedido.TabIndex = 32;
             // 
             // btnBuscarPedido
             // 
-            btnBuscarPedido.Location = new Point(416, 91);
+            btnBuscarPedido.Location = new Point(475, 121);
+            btnBuscarPedido.Margin = new Padding(3, 4, 3, 4);
             btnBuscarPedido.Name = "btnBuscarPedido";
-            btnBuscarPedido.Size = new Size(97, 41);
+            btnBuscarPedido.Size = new Size(111, 55);
             btnBuscarPedido.TabIndex = 34;
             btnBuscarPedido.Text = "Buscar pedido";
             btnBuscarPedido.UseVisualStyleBackColor = true;
+            btnBuscarPedido.Click += btnBuscarPedido_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(550, 98);
+            label2.Location = new Point(629, 131);
             label2.Name = "label2";
-            label2.Size = new Size(84, 30);
+            label2.Size = new Size(108, 38);
             label2.TabIndex = 35;
             label2.Text = "TOTAL:";
             // 
-            // label3
+            // lblTotal
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(640, 98);
-            label3.Name = "label3";
-            label3.Size = new Size(71, 30);
-            label3.TabIndex = 36;
-            label3.Text = "$0.00";
+            lblTotal.AutoSize = true;
+            lblTotal.BackColor = Color.White;
+            lblTotal.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotal.Location = new Point(731, 131);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(89, 38);
+            lblTotal.TabIndex = 36;
+            lblTotal.Text = "$0.00";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(550, 164);
+            label4.Location = new Point(629, 219);
             label4.Name = "label4";
-            label4.Size = new Size(192, 30);
+            label4.Size = new Size(243, 38);
             label4.TabIndex = 37;
             label4.Text = "Metodo de pago:";
             label4.Click += label4_Click;
             // 
             // btnActualizat
             // 
-            btnActualizat.Location = new Point(600, 358);
+            btnActualizat.Location = new Point(686, 477);
+            btnActualizat.Margin = new Padding(3, 4, 3, 4);
             btnActualizat.Name = "btnActualizat";
-            btnActualizat.Size = new Size(97, 41);
+            btnActualizat.Size = new Size(111, 55);
             btnActualizat.TabIndex = 38;
             btnActualizat.Text = "ACTUALIZAR PEDIDO";
             btnActualizat.UseVisualStyleBackColor = true;
             // 
             // btnCobrar
             // 
-            btnCobrar.Location = new Point(600, 278);
+            btnCobrar.Location = new Point(686, 371);
+            btnCobrar.Margin = new Padding(3, 4, 3, 4);
             btnCobrar.Name = "btnCobrar";
-            btnCobrar.Size = new Size(97, 41);
+            btnCobrar.Size = new Size(111, 55);
             btnCobrar.TabIndex = 39;
             btnCobrar.Text = "COBRAR";
             btnCobrar.UseVisualStyleBackColor = true;
+            btnCobrar.Click += btnCobrar_Click;
             // 
             // cmbMetodoPago
             // 
             cmbMetodoPago.FormattingEnabled = true;
             cmbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
-            cmbMetodoPago.Location = new Point(590, 214);
+            cmbMetodoPago.Location = new Point(674, 285);
+            cmbMetodoPago.Margin = new Padding(3, 4, 3, 4);
             cmbMetodoPago.Name = "cmbMetodoPago";
-            cmbMetodoPago.Size = new Size(121, 23);
+            cmbMetodoPago.Size = new Size(138, 28);
             cmbMetodoPago.TabIndex = 40;
             cmbMetodoPago.SelectedIndexChanged += cmbMetodoPago_SelectedIndexChanged;
             // 
+            // cmbMesa
+            // 
+            cmbMesa.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMesa.FormattingEnabled = true;
+            cmbMesa.Location = new Point(304, 131);
+            cmbMesa.Name = "cmbMesa";
+            cmbMesa.Size = new Size(151, 28);
+            cmbMesa.TabIndex = 41;
+            // 
+            // txtPedido
+            // 
+            txtPedido.Location = new Point(304, 169);
+            txtPedido.Name = "txtPedido";
+            txtPedido.Size = new Size(125, 27);
+            txtPedido.TabIndex = 42;
+            // 
             // Cajero
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(198, 107, 53);
-            ClientSize = new Size(771, 450);
+            ClientSize = new Size(881, 600);
+            Controls.Add(txtPedido);
+            Controls.Add(cmbMesa);
             Controls.Add(cmbMetodoPago);
             Controls.Add(btnCobrar);
             Controls.Add(btnActualizat);
             Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(lblTotal);
             Controls.Add(label2);
             Controls.Add(btnBuscarPedido);
-            Controls.Add(txtPedido);
-            Controls.Add(this.dgvDetallePedido);
+            Controls.Add(dgvDetallePedido);
             Controls.Add(label1);
             Controls.Add(label17);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Cajero";
             Text = "Cajero";
-            ((System.ComponentModel.ISupportInitialize)this.dgvDetallePedido).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDetallePedido).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         private void cmbMetodoPago_SelectedIndexChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         #endregion
@@ -188,13 +208,14 @@
         private Label label1;
         private DataGridView dgvDetallePedido;
         private DataGridView dataGridView1;
-        private TextBox txtPedido;
         private Button btnBuscarPedido;
         private Label label2;
-        private Label label3;
+        private Label lblTotal;
         private Label label4;
         private Button btnActualizat;
         private Button btnCobrar;
         private ComboBox cmbMetodoPago;
+        private ComboBox cmbMesa;
+        private TextBox txtPedido;
     }
 }
