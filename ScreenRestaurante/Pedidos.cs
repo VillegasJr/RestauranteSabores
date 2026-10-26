@@ -149,6 +149,7 @@ namespace ScreenRestaurante
             }
         }
 
+        //boton de quitar platillo del pedido
         private void bt_quitarplatillo_Click(object sender, EventArgs e)
         {
             if (dgv_platillos.CurrentRow == null || dgv_platillos.CurrentRow.IsNewRow)
