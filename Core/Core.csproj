@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Excepcion\**" />
+    <EmbeddedResource Remove="Excepcion\**" />
+    <None Remove="Excepcion\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Clases\VentaPlatillo.cs" />
   </ItemGroup>
 
@@ -17,7 +23,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Excepcion\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
