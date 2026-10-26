@@ -60,5 +60,14 @@ namespace ScreenRestaurante
                 // quieres que se cierre todo el programa, puedes usar Application.Exit();
             }
         }
+
+        private void hacerReservacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario para registrar una nueva reservación.
+            using (Reservaciones ventanaReservaciones = new Reservaciones())
+            {
+                ventanaReservaciones.ShowDialog();
+            }
+        }
     }
 }

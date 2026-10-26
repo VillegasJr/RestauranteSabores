@@ -1,13 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
+using Core.Repositorio;
+
 
 namespace ScreenRestaurante
 {
@@ -16,80 +10,123 @@ namespace ScreenRestaurante
         public Form1()
         {
             InitializeComponent();
+            
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Se ejecuta cuando el usuario pulsa el botón de iniciar sesión.
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            
-
+            // Obtener el usuario y quitar espacios al principio y al final.
             string usuario = txtUsuario.Text.Trim();
-            string contrasena = txtContrase�a.Text;
 
+            // Obtener la contraseña introducida.
+            string contrasena = txtContraseña.Text;
+
+            // Comprobar que ambos campos tengan información.
             if (string.IsNullOrWhiteSpace(usuario) ||
                 string.IsNullOrWhiteSpace(contrasena))
             {
-                MessageBox.Show("Ingresa tu usuario y contrase�a.");
-                return;
+                MessageBox.Show(
+                    "Ingresa tu usuario y contraseña.",
+                    "Campos obligatorios",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return; // Detener el proceso si falta algún dato.
             }
 
-            Core.Repositorio.RepositorioUsuarios repositorio =
-                new Core.Repositorio.RepositorioUsuarios();
+            // Crear el repositorio que valida las credenciales en MySQL.
+            RepositorioUsuarios repositorio =
+                new RepositorioUsuarios();
 
             try
             {
+                // Validar las credenciales y recuperar el rol del empleado.
                 if (repositorio.ValidarUsuario(
                     usuario, contrasena, out string rol))
                 {
                     MessageBox.Show(
-                        "�Bienvenido!",
+                        "¡Bienvenido!",
                         "Acceso autorizado",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
-                    if (rol == "GERENTE")
+                    // Normalizar el rol para comparar sin distinguir
+                    // entre mayúsculas y minúsculas.
+                    switch (rol.Trim().ToUpperInvariant())
                     {
-                        this.Hide();
+                        case "GERENTE":
+                            AbrirVentana(new GerenteSesion());
+                            break;
 
-                        using (Reservaciones ventana = new Reservaciones())
-                        {
-                            ventana.ShowDialog();
-                        }
+                        case "CHEF":
+                        case "COCINERO":
+                            AbrirVentana(new Cocinero());
+                            break;
 
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            "Tu usuario es v�lido, pero todav�a falta configurar la pantalla de tu puesto.");
+                        case "CAJERO":
+                            AbrirVentana(new Cajero());
+                            break;
 
-                        txtContrase�a.Clear();
-                        txtContrase�a.Focus();
+                        case "MESERO":
+                            AbrirVentana(new Pedidos());
+                            break;
+
+                        default:
+                            // El usuario existe, pero el rol no está configurado.
+                            MessageBox.Show(
+                                "Tu usuario es válido, pero el puesto '" +
+                                rol + "' no tiene una ventana configurada.",
+                                "Puesto no configurado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+
+                            txtContraseña.Clear();
+                            txtContraseña.Focus();
+                            break;
                     }
                 }
                 else
                 {
+                    // Mostrar un error si las credenciales no coinciden.
                     MessageBox.Show(
-                        "Usuario o contrase�a incorrectos.",
+                        "Usuario o contraseña incorrectos.",
                         "Error de acceso",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
 
-                    txtContrase�a.Clear();
-                    txtContrase�a.Focus();
+                    txtContraseña.Clear();
+                    txtContraseña.Focus();
                 }
             }
             catch (Exception ex)
             {
+                // Informar si ocurre un error al validar el usuario.
                 MessageBox.Show(
                     "No se pudo validar el usuario: " + ex.Message,
-                    "Error de conexi�n",
+                    "Error de conexión",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+        }
+
+        // Abre la ventana correspondiente y oculta temporalmente el inicio.
+        private void AbrirVentana(Form ventana)
+        {
+            this.Hide();
+
+            try
+            {
+                // Mostrar la ventana hasta que el usuario la cierre.
+                using (ventana)
+                {
+                    ventana.ShowDialog();
+                }
+            }
+            finally
+            {
+                // Volver a mostrar el inicio de sesión al cerrar la ventana.
+                this.Show();
             }
         }
     }
