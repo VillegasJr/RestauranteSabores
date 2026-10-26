@@ -20,7 +20,7 @@ namespace Core.Data
      
         private const string Usuario = "root";
 
-        private const string Contrasena = "12345";
+        private const string Contrasena = "1102";
 
      
         /// Construye y devuelve la cadena de conexión.
