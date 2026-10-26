@@ -10,15 +10,12 @@ using System.Windows.Forms;
 
 namespace ScreenRestaurante
 {
-    public partial class ScreenInicio : Form
+    public partial class Cajero : Form
     {
-        public ScreenInicio()
+        public Cajero()
         {
             InitializeComponent();
-
-            // Habilitar el scroll automático
-            this.AutoScroll = true;
         }
-
+        
     }
 }
