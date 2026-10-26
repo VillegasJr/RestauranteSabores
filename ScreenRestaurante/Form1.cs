@@ -67,7 +67,7 @@ namespace ScreenRestaurante
 
                         default:
                             MessageBox.Show(
-                                "No hay una pantalla configurada para este puesto.");
+                                "No hay una pantalla asignada para este puesto.");
                             break;
                     }
 
