@@ -33,7 +33,7 @@
             txtUsuario.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsuario.Location = new Point(159, 172);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(286, 45);
+            txtUsuario.Size = new Size(286, 32);
             txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
@@ -41,7 +41,7 @@
             txtContraseña.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtContraseña.Location = new Point(159, 265);
             txtContraseña.Name = "txtContraseña";
-            txtContraseña.Size = new Size(286, 45);
+            txtContraseña.Size = new Size(286, 32);
             txtContraseña.TabIndex = 1;
             // 
             // label1
@@ -50,7 +50,7 @@
             label1.Font = new Font("Book Antiqua", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(37, 24);
             label1.Name = "label1";
-            label1.Size = new Size(580, 68);
+            label1.Size = new Size(395, 46);
             label1.TabIndex = 2;
             label1.Text = "Acceso de Empleados";
             // 
@@ -60,7 +60,7 @@
             label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(159, 131);
             label2.Name = "label2";
-            label2.Size = new Size(114, 38);
+            label2.Size = new Size(77, 25);
             label2.TabIndex = 3;
             label2.Text = "Usuario";
             // 
@@ -70,7 +70,7 @@
             label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(159, 224);
             label3.Name = "label3";
-            label3.Size = new Size(160, 38);
+            label3.Size = new Size(109, 25);
             label3.TabIndex = 4;
             label3.Text = "Contraseña";
             // 
@@ -84,7 +84,7 @@
             btnIniciarSesion.TabIndex = 5;
             btnIniciarSesion.Text = "Iniciar sesión";
             btnIniciarSesion.UseVisualStyleBackColor = true;
-            btnIniciarSesion.Click += btnIniciarSesion_Click_1;
+            btnIniciarSesion.Click += btnIniciarSesion_Click;
             // 
             // Form1
             // 
@@ -99,6 +99,11 @@
             Name = "Form1";
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void btnIniciarSesion_Click_1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

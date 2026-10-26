@@ -1,10 +1,8 @@
-﻿using Core.Data;
+﻿
+using Core.Data;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace Core.Repositorio
 {
@@ -57,7 +55,7 @@ namespace Core.Repositorio
                             }
                         }
 
-                        // Registrar la venta.
+                        // Insertar los datos generales de la venta.
                         string insertarVenta = @"
                             INSERT INTO ventas
                             (pedido_id, mesa, fecha, subtotal,
@@ -88,10 +86,13 @@ namespace Core.Repositorio
                                 "@cajeroId", cajeroId);
 
                             comando.ExecuteNonQuery();
-                            ventaId = (int)comando.LastInsertedId;
+
+                            // Recuperar el ID generado para esta venta.
+                            ventaId = Convert.ToInt32(
+                                comando.LastInsertedId);
                         }
 
-                        // Copiar los platillos del pedido a la venta.
+                        // Copiar los platillos del pedido a detalle_venta.
                         string insertarDetalles = @"
                             INSERT INTO detalle_venta
                             (venta_id, menu_id, cantidad, precio, subtotal)
@@ -116,6 +117,7 @@ namespace Core.Repositorio
 
                             int detalles = comando.ExecuteNonQuery();
 
+                            // Evitar confirmar una venta sin detalles válidos.
                             if (detalles == 0)
                             {
                                 throw new InvalidOperationException(
@@ -123,7 +125,7 @@ namespace Core.Repositorio
                             }
                         }
 
-                        // Marcar el pedido como cobrado.
+                        // Cambiar el estado del pedido después del cobro.
                         string actualizarPedido = @"
                             UPDATE pedidos
                             SET estado = 'Cobrado'
@@ -135,17 +137,85 @@ namespace Core.Repositorio
                         {
                             comando.Parameters.AddWithValue(
                                 "@pedidoId", pedidoId);
+
                             comando.ExecuteNonQuery();
                         }
 
+                        // Confirmar todos los cambios de la transacción.
                         transaccion.Commit();
+
                         return ventaId;
                     }
                     catch
                     {
+                        // Deshacer los cambios si ocurre un error.
                         transaccion.Rollback();
                         throw;
                     }
+                }
+            }
+        }
+
+        // Consulta todas las ventas registradas durante el día actual.
+        public DataTable VentaDelDia()
+        {
+            using (MySqlConnection conexion = Conexion.CrearConexion())
+            {
+                conexion.Open();
+
+                string sql = @"
+                    SELECT
+                        id AS Folio,
+                        pedido_id AS Pedido,
+                        mesa AS Mesa,
+                        fecha AS Fecha,
+                        subtotal AS Subtotal,
+                        iva AS IVA,
+                        total AS Total,
+                        metodo_pago AS MetodoPago
+                    FROM ventas
+                    WHERE fecha >= CURDATE()
+                      AND fecha < CURDATE() + INTERVAL 1 DAY
+                    ORDER BY fecha DESC;";
+
+                using (MySqlCommand comando =
+                    new MySqlCommand(sql, conexion))
+                using (MySqlDataAdapter adaptador =
+                    new MySqlDataAdapter(comando))
+                {
+                    // Crear una tabla en memoria para guardar los resultados.
+                    DataTable tabla = new DataTable();
+
+                    // Ejecutar la consulta y llenar la tabla.
+                    adaptador.Fill(tabla);
+
+                    // Devolver las ventas al formulario.
+                    return tabla;
+                }
+            }
+        }
+
+        // Calcula el importe total de las ventas del día actual.
+        public decimal VentaTotalDia()
+        {
+            using (MySqlConnection conexion = Conexion.CrearConexion())
+            {
+                conexion.Open();
+
+                string sql = @"
+                    SELECT COALESCE(SUM(total), 0)
+                    FROM ventas
+                    WHERE fecha >= CURDATE()
+                      AND fecha < CURDATE() + INTERVAL 1 DAY;";
+
+                using (MySqlCommand comando =
+                    new MySqlCommand(sql, conexion))
+                {
+                    // Obtener un único resultado: la suma de las ventas.
+                    object resultado = comando.ExecuteScalar();
+
+                    // Convertir el resultado al tipo decimal y devolverlo.
+                    return Convert.ToDecimal(resultado);
                 }
             }
         }
