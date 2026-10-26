@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             dgv_platillos = new DataGridView();
-            Col_Platillo = new DataGridViewTextBoxColumn();
-            colCantidad = new DataGridViewTextBoxColumn();
-            colPrecio = new DataGridViewTextBoxColumn();
-            colComentario = new DataGridViewTextBoxColumn();
             pnl_platillos = new Panel();
+            flp_categorias = new FlowLayoutPanel();
+            bt_platillos = new Button();
+            bt_entradas = new Button();
+            bt_bebidas = new Button();
+            bt_postres = new Button();
+            flp_productos = new FlowLayoutPanel();
             lb_pedidomesa = new Label();
             lb_comentarios = new Label();
             tb_comentarios = new TextBox();
@@ -41,12 +43,11 @@
             cb_mesas = new ComboBox();
             label1 = new Label();
             label17 = new Label();
-            flp_productos = new FlowLayoutPanel();
-            flp_categorias = new FlowLayoutPanel();
-            bt_platillos = new Button();
-            bt_entradas = new Button();
-            bt_bebidas = new Button();
-            bt_postres = new Button();
+            bt_quitarplatillo = new Button();
+            Col_MenuId = new DataGridViewTextBoxColumn();
+            colPlatillo = new DataGridViewTextBoxColumn();
+            colCantidad = new DataGridViewTextBoxColumn();
+            colPrecio = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgv_platillos).BeginInit();
             pnl_platillos.SuspendLayout();
             flp_categorias.SuspendLayout();
@@ -57,7 +58,7 @@
             dgv_platillos.AllowUserToAddRows = false;
             dgv_platillos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_platillos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_platillos.Columns.AddRange(new DataGridViewColumn[] { Col_Platillo, colCantidad, colPrecio, colComentario });
+            dgv_platillos.Columns.AddRange(new DataGridViewColumn[] { Col_MenuId, colPlatillo, colCantidad, colPrecio });
             dgv_platillos.GridColor = Color.FromArgb(255, 249, 244);
             dgv_platillos.Location = new Point(18, 129);
             dgv_platillos.MultiSelect = false;
@@ -68,34 +69,6 @@
             dgv_platillos.Size = new Size(520, 500);
             dgv_platillos.TabIndex = 0;
             // 
-            // Col_Platillo
-            // 
-            Col_Platillo.HeaderText = "Platillo";
-            Col_Platillo.MinimumWidth = 6;
-            Col_Platillo.Name = "Col_Platillo";
-            Col_Platillo.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            colCantidad.HeaderText = "Cantidad";
-            colCantidad.MinimumWidth = 6;
-            colCantidad.Name = "colCantidad";
-            colCantidad.ReadOnly = true;
-            // 
-            // colPrecio
-            // 
-            colPrecio.HeaderText = "Precio";
-            colPrecio.MinimumWidth = 6;
-            colPrecio.Name = "colPrecio";
-            colPrecio.ReadOnly = true;
-            // 
-            // colComentario
-            // 
-            colComentario.HeaderText = "Comentario";
-            colComentario.MinimumWidth = 6;
-            colComentario.Name = "colComentario";
-            colComentario.ReadOnly = true;
-            // 
             // pnl_platillos
             // 
             pnl_platillos.Controls.Add(flp_categorias);
@@ -104,6 +77,62 @@
             pnl_platillos.Name = "pnl_platillos";
             pnl_platillos.Size = new Size(536, 500);
             pnl_platillos.TabIndex = 1;
+            // 
+            // flp_categorias
+            // 
+            flp_categorias.Controls.Add(bt_platillos);
+            flp_categorias.Controls.Add(bt_entradas);
+            flp_categorias.Controls.Add(bt_bebidas);
+            flp_categorias.Controls.Add(bt_postres);
+            flp_categorias.Dock = DockStyle.Top;
+            flp_categorias.Location = new Point(0, 0);
+            flp_categorias.Name = "flp_categorias";
+            flp_categorias.Size = new Size(536, 45);
+            flp_categorias.TabIndex = 6;
+            // 
+            // bt_platillos
+            // 
+            bt_platillos.Location = new Point(3, 3);
+            bt_platillos.Name = "bt_platillos";
+            bt_platillos.Size = new Size(126, 33);
+            bt_platillos.TabIndex = 1;
+            bt_platillos.Text = "Platillos";
+            bt_platillos.UseVisualStyleBackColor = true;
+            // 
+            // bt_entradas
+            // 
+            bt_entradas.Location = new Point(135, 3);
+            bt_entradas.Name = "bt_entradas";
+            bt_entradas.Size = new Size(126, 33);
+            bt_entradas.TabIndex = 2;
+            bt_entradas.Text = "Entradas";
+            bt_entradas.UseVisualStyleBackColor = true;
+            // 
+            // bt_bebidas
+            // 
+            bt_bebidas.Location = new Point(267, 3);
+            bt_bebidas.Name = "bt_bebidas";
+            bt_bebidas.Size = new Size(126, 33);
+            bt_bebidas.TabIndex = 3;
+            bt_bebidas.Text = "Bebidas";
+            bt_bebidas.UseVisualStyleBackColor = true;
+            // 
+            // bt_postres
+            // 
+            bt_postres.Location = new Point(399, 3);
+            bt_postres.Name = "bt_postres";
+            bt_postres.Size = new Size(126, 33);
+            bt_postres.TabIndex = 4;
+            bt_postres.Text = "Postres";
+            bt_postres.UseVisualStyleBackColor = true;
+            // 
+            // flp_productos
+            // 
+            flp_productos.AutoScroll = true;
+            flp_productos.Location = new Point(0, 51);
+            flp_productos.Name = "flp_productos";
+            flp_productos.Size = new Size(536, 449);
+            flp_productos.TabIndex = 5;
             // 
             // lb_pedidomesa
             // 
@@ -174,62 +203,41 @@
             label17.TabIndex = 29;
             label17.Text = "Modulo Pedidos";
             // 
-            // flp_productos
+            // bt_quitarplatillo
             // 
-            flp_productos.AutoScroll = true;
-            flp_productos.Dock = DockStyle.Fill;
-            flp_productos.Location = new Point(0, 0);
-            flp_productos.Name = "flp_productos";
-            flp_productos.Size = new Size(536, 500);
-            flp_productos.TabIndex = 5;
+            bt_quitarplatillo.Location = new Point(391, 671);
+            bt_quitarplatillo.Name = "bt_quitarplatillo";
+            bt_quitarplatillo.Size = new Size(105, 47);
+            bt_quitarplatillo.TabIndex = 30;
+            bt_quitarplatillo.Text = "Quitar Platillo";
+            bt_quitarplatillo.UseVisualStyleBackColor = true;
             // 
-            // flp_categorias
+            // Col_MenuId
             // 
-            flp_categorias.Controls.Add(bt_platillos);
-            flp_categorias.Controls.Add(bt_entradas);
-            flp_categorias.Controls.Add(bt_bebidas);
-            flp_categorias.Controls.Add(bt_postres);
-            flp_categorias.Dock = DockStyle.Top;
-            flp_categorias.Location = new Point(0, 0);
-            flp_categorias.Name = "flp_categorias";
-            flp_categorias.Size = new Size(536, 45);
-            flp_categorias.TabIndex = 6;
+            Col_MenuId.HeaderText = "ID";
+            Col_MenuId.MinimumWidth = 6;
+            Col_MenuId.Name = "Col_MenuId";
+            Col_MenuId.ReadOnly = true;
             // 
-            // bt_platillos
+            // colPlatillo
             // 
-            bt_platillos.Location = new Point(3, 3);
-            bt_platillos.Name = "bt_platillos";
-            bt_platillos.Size = new Size(126, 33);
-            bt_platillos.TabIndex = 1;
-            bt_platillos.Text = "Platillos";
-            bt_platillos.UseVisualStyleBackColor = true;
+            colPlatillo.HeaderText = "Platillo";
+            colPlatillo.Name = "colPlatillo";
+            colPlatillo.ReadOnly = true;
             // 
-            // bt_entradas
+            // colCantidad
             // 
-            bt_entradas.Location = new Point(135, 3);
-            bt_entradas.Name = "bt_entradas";
-            bt_entradas.Size = new Size(126, 33);
-            bt_entradas.TabIndex = 2;
-            bt_entradas.Text = "Entradas";
-            bt_entradas.UseVisualStyleBackColor = true;
+            colCantidad.HeaderText = "Cantidad";
+            colCantidad.MinimumWidth = 6;
+            colCantidad.Name = "colCantidad";
+            colCantidad.ReadOnly = true;
             // 
-            // bt_bebidas
+            // colPrecio
             // 
-            bt_bebidas.Location = new Point(267, 3);
-            bt_bebidas.Name = "bt_bebidas";
-            bt_bebidas.Size = new Size(126, 33);
-            bt_bebidas.TabIndex = 3;
-            bt_bebidas.Text = "Bebidas";
-            bt_bebidas.UseVisualStyleBackColor = true;
-            // 
-            // bt_postres
-            // 
-            bt_postres.Location = new Point(399, 3);
-            bt_postres.Name = "bt_postres";
-            bt_postres.Size = new Size(126, 33);
-            bt_postres.TabIndex = 4;
-            bt_postres.Text = "Postres";
-            bt_postres.UseVisualStyleBackColor = true;
+            colPrecio.HeaderText = "Precio";
+            colPrecio.MinimumWidth = 6;
+            colPrecio.Name = "colPrecio";
+            colPrecio.ReadOnly = true;
             // 
             // Pedidos
             // 
@@ -237,6 +245,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(198, 107, 53);
             ClientSize = new Size(1218, 743);
+            Controls.Add(bt_quitarplatillo);
             Controls.Add(label17);
             Controls.Add(label1);
             Controls.Add(cb_mesas);
@@ -267,10 +276,6 @@
         private TextBox tb_comentarios;
         private Button bt_enviarcocina;
         public Label lb_pedidomesa;
-        private DataGridViewTextBoxColumn Col_Platillo;
-        private DataGridViewTextBoxColumn colCantidad;
-        private DataGridViewTextBoxColumn colPrecio;
-        private DataGridViewTextBoxColumn colComentario;
         private ComboBox cb_mesas;
         private Label label17;
         private FlowLayoutPanel flp_categorias;
@@ -279,5 +284,10 @@
         private Button bt_bebidas;
         private Button bt_postres;
         private FlowLayoutPanel flp_productos;
+        private Button bt_quitarplatillo;
+        private DataGridViewTextBoxColumn Col_MenuId;
+        private DataGridViewTextBoxColumn colPlatillo;
+        private DataGridViewTextBoxColumn colCantidad;
+        private DataGridViewTextBoxColumn colPrecio;
     }
 }
