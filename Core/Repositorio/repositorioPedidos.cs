@@ -108,7 +108,52 @@ namespace Core.Repositorios
                     }
                 }
             }
+
         }
+
+        public DataTable ObtenerPedidosPendientesDeCobro(string mesa)
+        {
+            using (MySqlConnection conexion = Conexion.CrearConexion())
+            {
+                conexion.Open();
+
+                string sql = @"
+            SELECT
+                p.id AS IdPedido,
+                p.mesa AS Mesa,
+                p.estado AS Estado,
+                p.fecha AS Fecha
+            FROM pedidos p
+            WHERE p.mesa = @mesa
+              AND p.estado = 'Listo'
+              AND EXISTS (
+                  SELECT 1
+                  FROM detalle_pedido dp
+                  WHERE dp.pedido_id = p.id
+              )
+              AND NOT EXISTS (
+                  SELECT 1
+                  FROM ventas v
+                  WHERE v.pedido_id = p.id
+              )
+            ORDER BY p.fecha ASC;";
+
+                using (MySqlCommand comando =
+                    new MySqlCommand(sql, conexion))
+                {
+                    comando.Parameters.AddWithValue("@mesa", mesa);
+
+                    using (MySqlDataAdapter adaptador =
+                        new MySqlDataAdapter(comando))
+                    {
+                        DataTable tabla = new DataTable();
+                        adaptador.Fill(tabla);
+                        return tabla;
+                    }
+                }
+            }
+        }
+
 
     }
 }

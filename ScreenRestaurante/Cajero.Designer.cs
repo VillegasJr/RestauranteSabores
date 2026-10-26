@@ -31,7 +31,6 @@
             label17 = new Label();
             label1 = new Label();
             dgvDetallePedido = new DataGridView();
-            txtPedido = new TextBox();
             btnBuscarPedido = new Button();
             label2 = new Label();
             lblTotal = new Label();
@@ -39,6 +38,8 @@
             btnActualizat = new Button();
             btnCobrar = new Button();
             cmbMetodoPago = new ComboBox();
+            cmbMesa = new ComboBox();
+            txtPedido = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvDetallePedido).BeginInit();
             SuspendLayout();
             // 
@@ -73,14 +74,6 @@
             dgvDetallePedido.RowHeadersWidth = 51;
             dgvDetallePedido.Size = new Size(574, 365);
             dgvDetallePedido.TabIndex = 32;
-            // 
-            // txtPedido
-            // 
-            txtPedido.Location = new Point(278, 131);
-            txtPedido.Margin = new Padding(3, 4, 3, 4);
-            txtPedido.Name = "txtPedido";
-            txtPedido.Size = new Size(164, 27);
-            txtPedido.TabIndex = 33;
             // 
             // btnBuscarPedido
             // 
@@ -144,6 +137,7 @@
             btnCobrar.TabIndex = 39;
             btnCobrar.Text = "COBRAR";
             btnCobrar.UseVisualStyleBackColor = true;
+            btnCobrar.Click += btnCobrar_Click;
             // 
             // cmbMetodoPago
             // 
@@ -156,12 +150,30 @@
             cmbMetodoPago.TabIndex = 40;
             cmbMetodoPago.SelectedIndexChanged += cmbMetodoPago_SelectedIndexChanged;
             // 
+            // cmbMesa
+            // 
+            cmbMesa.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMesa.FormattingEnabled = true;
+            cmbMesa.Location = new Point(304, 131);
+            cmbMesa.Name = "cmbMesa";
+            cmbMesa.Size = new Size(151, 28);
+            cmbMesa.TabIndex = 41;
+            // 
+            // txtPedido
+            // 
+            txtPedido.Location = new Point(304, 169);
+            txtPedido.Name = "txtPedido";
+            txtPedido.Size = new Size(125, 27);
+            txtPedido.TabIndex = 42;
+            // 
             // Cajero
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(198, 107, 53);
             ClientSize = new Size(881, 600);
+            Controls.Add(txtPedido);
+            Controls.Add(cmbMesa);
             Controls.Add(cmbMetodoPago);
             Controls.Add(btnCobrar);
             Controls.Add(btnActualizat);
@@ -169,7 +181,6 @@
             Controls.Add(lblTotal);
             Controls.Add(label2);
             Controls.Add(btnBuscarPedido);
-            Controls.Add(txtPedido);
             Controls.Add(dgvDetallePedido);
             Controls.Add(label1);
             Controls.Add(label17);
@@ -183,12 +194,12 @@
 
         private void cmbMetodoPago_SelectedIndexChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         #endregion
@@ -197,7 +208,6 @@
         private Label label1;
         private DataGridView dgvDetallePedido;
         private DataGridView dataGridView1;
-        private TextBox txtPedido;
         private Button btnBuscarPedido;
         private Label label2;
         private Label lblTotal;
@@ -205,5 +215,7 @@
         private Button btnActualizat;
         private Button btnCobrar;
         private ComboBox cmbMetodoPago;
+        private ComboBox cmbMesa;
+        private TextBox txtPedido;
     }
 }

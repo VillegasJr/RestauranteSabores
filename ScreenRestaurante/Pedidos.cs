@@ -90,16 +90,23 @@ namespace ScreenRestaurante
             Button boton = (Button)sender;
             object[] datos = (object[])boton.Tag;
 
-            dgv_platillos.Rows.Add(
-                datos[0],
-                datos[1],
+            int idMenu = Convert.ToInt32(datos[0]);
+            string nombre = Convert.ToString(datos[1]);
+            decimal precio = Convert.ToDecimal(datos[2]);
+
+            int indice = dgv_platillos.Rows.Add(
+                nombre,
                 1,
-                datos[2],
+                precio,
                 tb_comentarios.Text.Trim()
             );
 
+            // Guardar el ID real sin mostrarlo en la tabla.
+            dgv_platillos.Rows[indice].Tag = idMenu;
+
             tb_comentarios.Clear();
         }
+
 
         private void bt_enviarcocina_Click(object sender, EventArgs e)
         {
@@ -117,27 +124,56 @@ namespace ScreenRestaurante
 
             try
             {
-                int idPedido = repositorio.Registrar(cb_mesas.Text, idMesero, "Pendiente");
+                int idPedido = repositorio.Registrar(
+                    cb_mesas.Text,
+                    idMesero,
+                    "Pendiente"
+                );
 
                 foreach (DataGridViewRow fila in dgv_platillos.Rows)
                 {
+                    if (fila.IsNewRow)
+                        continue;
+
+                    int idMenu = Convert.ToInt32(fila.Tag);
+
+                    int cantidad = Convert.ToInt32(
+                        fila.Cells["colCantidad"].Value
+                    );
+
+                    string comentario = Convert.ToString(
+                        fila.Cells["colComentario"].Value
+                    );
+
                     repositorio.RegistrarPlatillo(
                         idPedido,
-                        Convert.ToInt32(fila.Cells["menu_id"].Value),
-                        Convert.ToInt32(fila.Cells["cantidad"].Value),
-                        Convert.ToString(fila.Cells["comentario"].Value)
+                        idMenu,
+                        cantidad,
+                        comentario
                     );
                 }
 
-                MessageBox.Show("Pedido enviado a cocina correctamente.");
+                MessageBox.Show(
+                    $"¡Pedido #{idPedido} enviado a cocina correctamente!",
+                    "Pedido enviado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
                 dgv_platillos.Rows.Clear();
                 tb_comentarios.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el pedido: " + ex.Message);
+                MessageBox.Show(
+                    "Error al guardar el pedido: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
+
     }
 }
 
